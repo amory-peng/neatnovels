@@ -37,7 +37,7 @@ sufficient CSS styling:
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and Front End User Authentication (2 days)
+### Phase 1: Backend setup and Front End User Authentication (2 days w8d3)
 
 **Objective:** Functioning rails project with front-end Authentication
 1. New `Rails` project
@@ -51,7 +51,7 @@ sufficient CSS styling:
 3. Styling
 4. Seed Users db
 
-### Phase 2: Books Model, API, and components (2 days)
+### Phase 2: Books Model, API, and components (2 days w8d5)
 
 **Objective:** Books can be created, read, edited and destroyed through
 the API.
@@ -63,7 +63,7 @@ the API.
   2. BookDetail
 5. Styling
 
-### Phase 3: Bookshelves (2 day)
+### Phase 3: Bookshelves (2 days w9d2)
 
 **Objective:** Books belong to Bookshelves that can be created, read, edited and destroyed through the API.
 1. `Bookshelf` model
@@ -75,7 +75,7 @@ the API.
   3. Add/Remove Shelf
 5. Styling
 
-### Phase 4: Reviews (2 day)
+### Phase 4: Reviews (2 day w9d4)
 
 **Objective:** Users can add reviews to Books, CRUD through API
 1. `Review` model (`user_id`, `title`, `body`, `book_id`) + seed
@@ -87,7 +87,7 @@ the API.
   3. ReviewForm
 5. Styling
 
-### Phase 5: Navbar with Search (1 day)
+### Phase 5: Navbar with Search (1 day w9d5)
 
 **objective:** Users can search for books and navigate site through navbar
 1. Navbar component
