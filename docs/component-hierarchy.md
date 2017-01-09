@@ -20,7 +20,7 @@
   - AddToShelfButton
   - ReviewsIndex
   + ReviewForm
-  + ReviewDetail
+  + ReviewsIndexItem
 
 **BookshelvesIndexContainer**
  - BookshelvesIndex
