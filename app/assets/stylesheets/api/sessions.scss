@@ -1,0 +1,26 @@
+// Place all the styles related to the api/sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.session-form-container {
+  font-family: $roboto;
+  height: 50%;
+  color: white;
+  display: flex;
+  flex-flow: column;
+}
+
+.session-form {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.session-form-container > h2 {
+  text-align: center;
+}
+
+.session-form > input {
+  width: 200px;
+}
