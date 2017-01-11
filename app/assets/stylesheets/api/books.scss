@@ -1,0 +1,73 @@
+// Place all the styles related to the api/books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.books-main-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background: black;
+
+}
+
+.books-index-container {
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 50px;
+}
+
+.books-index-container > li {
+  flex-basis: 200px;
+  border: 1px solid black;
+  margin: 10px 10px;
+}
+
+.books-index-item {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  width: 250px;
+  align-self: flex-start;
+}
+
+.books-index-item img {
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  background: white;
+  transition: width 0.2s, min-height 0.2s;
+  position: relative;
+}
+
+.books-index-desc{
+  display: none;
+  position: absolute;
+}
+
+.books-index-item:hover img{
+  min-height: 400px;
+  width: 300px;
+  z-index: 99;
+  cursor: pointer;
+  // background: rgba(0, 0, 0, 0.25);
+}
+.books-index-item:hover .books-index-desc {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  z-index: 100;
+}
+
+.books-index-item h1{
+  font-size: 20px;
+  color: $red;
+  overflow: wrap;
+}
+
+.books-index-item h2 {
+  font-size: 16px;
+  color: black;
+}

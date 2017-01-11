@@ -5,3 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Book.create(
+  title: "Harry Potter",
+  author: "JK Rowling",
+  description: "follow a boy wizard and his magical adventures",
+  year: 1995
+)
+
+bookArray = [];
+while bookArray.length < 10
+  newBook = {
+    title: Faker::Book.title,
+    author: Faker::Book.author,
+    description: Faker::ChuckNorris.fact,
+    year: rand(1.year)%10000
+  }
+  bookArray << newBook
+end
+
+Book.create(bookArray)

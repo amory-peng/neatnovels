@@ -2,25 +2,60 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.session-form-container {
-  font-family: $roboto;
-  height: 50%;
-  color: white;
+.session-main-container {
+  background: black;
+  height: 85vh;
   display: flex;
-  flex-flow: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.session-form {
+.session-form-container {
+  font-family: $roboto;
+  padding: 75px 25px;
+  color: white;
+  border: 1px solid white;
   display: flex;
   flex-flow: column;
   justify-content: center;
-  align-items: center;
 }
 
 .session-form-container > h2 {
   text-align: center;
+  font-size: 20px;
 }
 
-.session-form > input {
+.session-form {
+  height: 50%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+
+.session-form > input:not(.button) {
   width: 200px;
+  height: 20px;
+  padding: 5px;
+  margin: 10px 0px;
+  outline: none;
+  border: 1.5px solid $black;
+  border-radius: 2px;
+}
+
+.session-form > input:hover:not(.button) {
+  border: 1.5px solid $grey;
+}
+
+.session-form > input:focus:not(.button) {
+  border: 1.5px solid $red;
+}
+
+.session-form > .button {
+  height: 30px;
+  width: 212px;
+  margin: 10px 0px;
+}
+.session-form h3 {
+  font-size: 12px;
 }
