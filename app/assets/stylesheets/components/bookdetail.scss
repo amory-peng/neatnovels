@@ -1,0 +1,27 @@
+.bookdetail-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.bookdetail-container img {
+  height: 500px;
+  width: 400px;
+  padding: 60px;
+}
+
+.book-desc-container {
+  padding-top: 60px;
+}
+
+.book-desc-container > * {
+  padding-bottom: 20px;
+}
+
+.book-desc-title {
+  padding-bottom: 5px;
+}
+
+.book-desc-summary {
+  padding-top: 20px;
+}

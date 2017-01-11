@@ -5,7 +5,7 @@
   height: 100%;
   width: 100%;
   display: flex;
-  background: black;
+  background: white;
 
 }
 
@@ -24,6 +24,7 @@
 }
 
 .books-index-item {
+  cursor: pointer;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -51,7 +52,6 @@
   min-height: 400px;
   width: 300px;
   z-index: 99;
-  cursor: pointer;
   // background: rgba(0, 0, 0, 0.25);
 }
 .books-index-item:hover .books-index-desc {

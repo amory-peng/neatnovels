@@ -11,7 +11,7 @@ class Greeting extends React.Component {
   }
 
   ensureLoggedIn() {
-    console.log(this.props.loggedIn);
+    // console.log(this.props.loggedIn);
     if (!this.props.loggedIn) {
       hashHistory.push('/login');
     }

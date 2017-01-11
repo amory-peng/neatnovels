@@ -7,7 +7,6 @@ const booksReducer = (state={}, action) => {
     switch(action.type) {
       case RECEIVE_BOOKS:
         newState = merge({}, state, action.books);
-        console.log(newState);
         return newState;
 
       // case RECEIVE_BOOK:

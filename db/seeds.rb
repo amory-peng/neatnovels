@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(username: 'jimbo', password: 'password')
+
 Book.create(
   title: "Harry Potter",
   author: "JK Rowling",
@@ -15,7 +16,7 @@ Book.create(
 )
 
 bookArray = [];
-while bookArray.length < 10
+while bookArray.length < 40
   newBook = {
     title: Faker::Book.title,
     author: Faker::Book.author,

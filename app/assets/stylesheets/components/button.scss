@@ -1,4 +1,6 @@
 .button {
+  box-sizing: border-box;
+  font-family: $roboto;
   padding: 5px;
   border: 3px solid $red;
   border-radius: 3px;
@@ -11,4 +13,9 @@
   border: 3px solid $dark-red;
   background: $dark-red;
   cursor: pointer;
+}
+
+.button:active {
+  border: 3px solid $darkest-red;
+  background: $darkest-red;
 }

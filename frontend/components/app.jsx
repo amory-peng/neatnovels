@@ -1,20 +1,10 @@
 import React from 'react';
-import GreetingContainer from './greeting/greeting_container';
 import { Link, withRouter } from 'react-router';
-
+import Header from './greeting/header';
 
 const App = (props) => (
   <div>
-    <div className="header">
-      <Link to="/">
-        <h1>
-          neat<span>novels</span>
-        </h1>
-      </Link>
-
-      <GreetingContainer />
-    </div>
-
+    <Header />
     <div className="body">
       { props.children }
     </div>

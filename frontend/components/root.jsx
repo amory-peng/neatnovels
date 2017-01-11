@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import {Router, hashHistory, Route, IndexRoute } from 'react-router';
-import App from './app';
+import App from './app';  
 import SessionForm from './session_form/session_form_container';
 import BooksIndex from './books/books_index_container';
 import BookDetail from './books/book_detail_container';
