@@ -4,7 +4,7 @@
 
 [Trello link][trello]
 
-[heroku]:
+[heroku]: http://stark-fortress-75406.herokuapp.com/
 [trello]: https://trello.com/b/W3HvJUJo/fsp-goodreads
 
 ## Minimum Viable Product
