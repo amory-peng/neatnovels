@@ -19,7 +19,7 @@ class BookshelfIndex extends React.Component{
       .map((shelf, idx) => <li key={idx} className="link">
             { this.props.bookshelves[shelf].name}
           </li>);
-      console.log(bookshelvesList);
+
       return(
         <div className="bookshelves-main-container">
           <div className="bookshelves-index-container">

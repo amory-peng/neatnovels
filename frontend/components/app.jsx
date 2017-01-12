@@ -4,7 +4,7 @@ import Header from './greeting/header';
 
 const App = (props) => (
   <div>
-    <Header />
+    <Header location={props.location} />
     <div className="body">
       { props.children }
     </div>

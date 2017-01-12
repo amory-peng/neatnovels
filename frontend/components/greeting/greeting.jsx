@@ -1,29 +1,37 @@
 import React from 'react';
-import { Link, hashHistory } from 'react-router';
+import { Link, hashHistory, withRouter } from 'react-router';
 
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
-    this.goToShelves = this.goToShelves.bind(this);
+    this.goTo = this.goTo.bind(this);
+    this.logout = this.logout.bind(this);
+    this.goToText = "Shelves";
   }
 
-  componentDidUpdate() {
-    this.ensureLoggedIn();
+  logout() {
+    this.props.logout()
+    .then(() => hashHistory.push('/login'));
+
   }
 
-  ensureLoggedIn() {
-    // console.log(this.props.loggedIn);
-    if (!this.props.loggedIn) {
-      hashHistory.push('/login');
+  goTo() {
+    if (this.props.location.pathname === '/bookshelves') {
+      hashHistory.push('/books');
+    } else {
+      hashHistory.push('/bookshelves');
     }
-  }
-
-  goToShelves() {
-    hashHistory.push('/bookshelves');
   }
 
   render () {
     let text;
+    let goToText;
+    if (this.props.location.pathname === '/bookshelves') {
+      goToText = 'Books';
+    } else {
+      goToText = "Shelves";
+    }
+
     if (!this.props.currentUser) {
       text = (
         <div id="greeting-container">
@@ -36,8 +44,8 @@ class Greeting extends React.Component {
       text = (
         <div id="greeting-container">
           <h2>Welcome, {this.props.currentUser.username}.</h2>
-          <button className="button" onClick={this.goToShelves}>Shelves</button>
-          <button className="button" onClick={this.props.logout}>Log out</button>
+          <button className="button" onClick={this.goTo}>{goToText}</button>
+          <button className="button" onClick={this.logout}>Log out</button>
         </div>
       );
     }
@@ -49,4 +57,4 @@ class Greeting extends React.Component {
     );
   }
 }
-export default Greeting;
+export default withRouter(Greeting);

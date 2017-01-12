@@ -31,6 +31,10 @@ class BooksIndex extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.handleScroll);
+  }
+
   handleClick(id) {
     return () => {
       document.removeEventListener('scroll', this.handleScroll);
