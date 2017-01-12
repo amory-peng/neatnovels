@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { username: "", password: "" };
+    this.state = { username: "", password: "", hasErrors: false };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
   }
@@ -16,6 +16,12 @@ class SessionForm extends React.Component {
   redirectIfLoggedIn() {
     if (this.props.loggedIn) {
       this.props.router.push('/books');
+    }
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (this.props.formType !== newProps.formType) {
+      this.setState({username: "", password: ""}, ()=>this.props.removeErrors());
     }
   }
 
@@ -38,6 +44,9 @@ class SessionForm extends React.Component {
 
   render() {
     let text;
+    let buttonText;
+    let errorText;
+
     if (this.props.formType === "login") {
       text = <h3>
         Not a user?&nbsp;
@@ -45,12 +54,21 @@ class SessionForm extends React.Component {
         &nbsp;or&nbsp;
         <span className="link" onClick={this.handleDemo}>demo</span>.
       </h3>;
+      buttonText="Login";
     } else {
       text = <h3>Already a user? <Link to="/login" className="link">Sign in</Link>
         &nbsp;or&nbsp;
         <span className="link" onClick={this.handleDemo}>demo</span>.
         </h3>;
+      buttonText="Sign up";
     }
+
+    if (this.props.errors) {
+      errorText = this.props.errors.map((error, idx) => (
+        <li key={idx}>{error}.</li>
+      ));
+    }
+
     return(
       <div className="session-main-container">
         <div className="session-form-container">
@@ -61,14 +79,15 @@ class SessionForm extends React.Component {
               placeholder="Username"
               value={this.state.username} />
 
-            <input type="text"
+            <input type="password"
               onChange={this.update('password')}
               placeholder="Password"
               value={this.state.password} />
 
-            <input type="submit" className="button" value="Enter"/>
+            <input type="submit" className="button" value={buttonText}/>
             { text }
           </form>
+          <ul className="session-errors">{errorText}</ul>
         </div>
       </div>
     );

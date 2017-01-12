@@ -1,6 +1,9 @@
 class Api::BooksController < ApplicationController
   def index
-    @books = Book.all.order(:title)
+    sleep 0.5
+    @count = params[:lastId].to_i
+    @books = Book.all.order('TITLE ASC').limit(12).offset(params[:lastId])
+    # .where("id > ?", params[:lastId])
   end
 
   def show
@@ -11,5 +14,10 @@ class Api::BooksController < ApplicationController
     else
       render json: "Book not found", status: 422
     end
+  end
+
+  def book_params
+    params.require(:book)
+    .permit(:title, :author, :year, :description, :image_url)
   end
 end

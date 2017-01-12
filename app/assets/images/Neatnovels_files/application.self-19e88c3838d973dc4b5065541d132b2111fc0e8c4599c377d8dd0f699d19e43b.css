@@ -1,0 +1,364 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 6, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/base/reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+
+/* line 27, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/base/reset.scss */
+a {
+  color: inherit;
+}
+
+/* line 31, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/base/reset.scss */
+.button:focus {
+  outline: none;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 35, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/base/reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 39, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/base/reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 42, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/base/reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 45, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/base/reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 48, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/base/reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 53, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/base/reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 6, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/base/fonts.scss */
+h1 {
+  font-size: 25px;
+}
+
+/* line 10, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/base/fonts.scss */
+h2 {
+  font-size: 20px;
+}
+
+/* line 1, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/components/body.scss */
+.body {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 6, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/components/body.scss */
+.main-container {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 11, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/components/body.scss */
+.padding-bottom-5 {
+  padding-bottom: 5px;
+}
+
+/* line 1, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/components/bookdetail.scss */
+.bookdetail-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+/* line 7, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/components/bookdetail.scss */
+.bookdetail-container img {
+  height: 500px;
+  width: 400px;
+  padding: 60px;
+}
+
+/* line 13, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/components/bookdetail.scss */
+.book-desc-container {
+  padding-top: 60px;
+}
+
+/* line 17, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/components/bookdetail.scss */
+.book-desc-container > * {
+  padding-bottom: 20px;
+}
+
+/* line 21, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/components/bookdetail.scss */
+.book-desc-title {
+  padding-bottom: 5px;
+}
+
+/* line 25, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/components/bookdetail.scss */
+.book-desc-summary {
+  padding-top: 20px;
+}
+
+/* line 1, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/components/button.scss */
+.button {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  padding: 5px;
+  border: 3px solid crimson;
+  border-radius: 3px;
+  background: crimson;
+  color: white;
+  font-size: 12px;
+}
+
+/* line 12, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/components/button.scss */
+.button:hover {
+  border: 3px solid firebrick;
+  background: firebrick;
+  cursor: pointer;
+}
+
+/* line 18, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/components/button.scss */
+.button:active {
+  border: 3px solid darkred;
+  background: darkred;
+}
+
+/* line 1, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/components/header.scss */
+.header {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid grey;
+}
+
+/* line 10, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/components/header.scss */
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+  color: crimson;
+}
+
+/* line 16, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/components/header.scss */
+.header span {
+  color: black;
+}
+
+/* line 21, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/components/header.scss */
+#greeting-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* line 27, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/components/header.scss */
+#greeting-container > .button:last-child {
+  margin-left: 10px;
+}
+
+/* line 1, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/components/link.scss */
+.link {
+  color: crimson;
+}
+
+/* line 5, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/components/link.scss */
+.link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* line 4, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/api/books.scss */
+.books-main-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background: white;
+}
+
+/* line 12, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/api/books.scss */
+.books-index-container {
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 50px;
+}
+
+/* line 20, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/api/books.scss */
+.books-index-container > li {
+  flex-basis: 200px;
+  border: 1px solid black;
+  margin: 10px 10px;
+}
+
+/* line 26, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/api/books.scss */
+.books-index-item {
+  cursor: pointer;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  width: 250px;
+  align-self: flex-start;
+}
+
+/* line 37, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/api/books.scss */
+.books-index-item img {
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  background: white;
+  transition: width 0.2s, min-height 0.2s;
+  position: relative;
+}
+
+/* line 46, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/api/books.scss */
+.books-index-desc {
+  display: none;
+  position: absolute;
+}
+
+/* line 51, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/api/books.scss */
+.books-index-item:hover img {
+  min-height: 400px;
+  width: 300px;
+  z-index: 99;
+}
+
+/* line 57, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/api/books.scss */
+.books-index-item:hover .books-index-desc {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  z-index: 100;
+}
+
+/* line 64, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/api/books.scss */
+.books-index-item h1 {
+  font-size: 20px;
+  color: crimson;
+  width: 250px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* line 72, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/api/books.scss */
+.books-index-item h2 {
+  font-size: 16px;
+  color: black;
+}
+
+/* line 5, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/api/sessions.scss */
+.session-main-container {
+  background: black;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 13, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/api/sessions.scss */
+.session-form-container {
+  font-family: "Roboto", sans-serif;
+  padding: 75px 25px;
+  color: white;
+  border: 1px solid white;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+/* line 23, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/api/sessions.scss */
+.session-form-container > h2 {
+  text-align: center;
+}
+
+/* line 27, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/api/sessions.scss */
+.session-form {
+  height: 50%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+/* line 35, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/api/sessions.scss */
+.session-form > input:not(.button) {
+  width: 200px;
+  height: 20px;
+  padding: 5px;
+  margin: 10px 0px;
+  outline: none;
+  border: 1.5px solid black;
+  border-radius: 2px;
+}
+
+/* line 45, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/api/sessions.scss */
+.session-form > input:hover:not(.button) {
+  border: 1.5px solid grey;
+}
+
+/* line 49, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/api/sessions.scss */
+.session-form > input:focus:not(.button) {
+  border: 1.5px solid crimson;
+}
+
+/* line 53, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/api/sessions.scss */
+.session-form > .button {
+  height: 30px;
+  width: 212px;
+  margin: 10px 0px;
+}
+
+/* line 58, /Users/amorypeng/Desktop/projects/neatnovels/app/assets/stylesheets/api/sessions.scss */
+.session-form h3 {
+  font-size: 12px;
+}

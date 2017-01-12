@@ -1,13 +1,29 @@
+.root {
+  height: 100%;
+  width: 100%;
+}
+
 .body {
   height: 100%;
   width: 100%;
+  min-height: 80vh;
 }
 
 .main-container {
   height: 100%;
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+
 }
 
 .padding-bottom-5 {
   padding-bottom: 5px;
+}
+
+.loading {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  z-index: 200000;
 }

@@ -3,12 +3,14 @@ import BooksIndex from './books_index';
 import { requestBooks } from '../../actions/book_actions';
 
 const mapStateToProps = ({ books }) => {
-  const bookList = Object.keys(books).map((bookId) => (books[bookId]));
+  const bookIds = Object.keys(books).sort((a,b) => a - b);
+  console.log(bookIds);
+  const bookList = bookIds.map( id => books[id]);
   return ({ books: bookList });
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  requestBooks: () => dispatch(requestBooks()),
+  requestBooks: (lastId) => dispatch(requestBooks(lastId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksIndex);

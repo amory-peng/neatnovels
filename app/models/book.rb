@@ -15,4 +15,7 @@
 class Book < ApplicationRecord
   validates :title, :year, :description, presence: true
   validates_uniqueness_of :title, scope: :author
+
+  has_many :shelvings
+  has_many :bookshelves, through: :shelvings
 end

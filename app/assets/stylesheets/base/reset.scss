@@ -24,6 +24,11 @@ time, mark, audio, video, button {
 	vertical-align: baseline;
 	text-decoration: none;
 }
+
+html {
+	overflow-y: scroll;
+}
+
 a {
 	color: inherit;
 }

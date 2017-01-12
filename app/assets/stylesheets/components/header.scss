@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 15px;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid $light-grey;
 }
 
 h1 {
@@ -22,8 +22,12 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-right: 40px;
 }
 
+#greeting-container > h2 {
+  margin-right: 10px;
+}
 #greeting-container > .button:last-child {
   margin-left: 10px;
 }

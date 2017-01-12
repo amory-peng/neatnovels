@@ -15,15 +15,24 @@ Book.create(
   year: 1995
 )
 
+Bookshelf.create(name: "Want to Read", user_id: 1)
+Bookshelf.create(name: "Currently Reading", user_id: 1)
+Bookshelf.create(name: "Already read", user_id: 1)
+
+Shelving.create(bookshelf_id: 1, book_id: 1)
+
 bookArray = [];
-while bookArray.length < 40
+count = 0
+while bookArray.length < 100
   newBook = {
-    title: Faker::Book.title,
-    author: Faker::Book.author,
+    title: "title#{count}",
+    author: "author#{count}",
     description: Faker::ChuckNorris.fact,
-    year: rand(1.year)%10000
+    year: rand(400) + 1610
   }
+  count += 1
   bookArray << newBook
+
 end
 
 Book.create(bookArray)

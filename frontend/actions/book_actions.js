@@ -15,8 +15,8 @@ export const receiveBook = book => ({
 });
 
 //thunks
-export const requestBooks = () => dispatch => (
-  BookAPIUtil.fetchBooks()
+export const requestBooks = lastId => dispatch => (
+  BookAPIUtil.fetchBooks(lastId)
     .then(res => dispatch(receiveBooks(res)))
 );
 

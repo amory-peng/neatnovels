@@ -1,0 +1,33 @@
+// Place all the styles related to the api/bookshelves controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.bookshelves-main-container {
+  height: 100%;
+  width: 100%;
+}
+.bookshelves-index-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 100px 100px;
+  padding: 20px;
+  border: 1px solid $light-grey;
+  border-bottom: 3px solid $light-grey;
+  width: 25%;
+  max-width: 250px;
+
+}
+
+.bookshelves-index-container > * {
+  margin: 10px 0px;
+
+}
+
+.bookshelves-index-container > h2 {
+
+}
+
+.bookshelves-index > * {
+  padding: 3px 0px;
+}

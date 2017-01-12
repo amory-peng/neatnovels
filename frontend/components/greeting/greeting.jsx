@@ -4,6 +4,7 @@ import { Link, hashHistory } from 'react-router';
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
+    this.goToShelves = this.goToShelves.bind(this);
   }
 
   componentDidUpdate() {
@@ -15,6 +16,10 @@ class Greeting extends React.Component {
     if (!this.props.loggedIn) {
       hashHistory.push('/login');
     }
+  }
+
+  goToShelves() {
+    hashHistory.push('/bookshelves');
   }
 
   render () {
@@ -31,6 +36,7 @@ class Greeting extends React.Component {
       text = (
         <div id="greeting-container">
           <h2>Welcome, {this.props.currentUser.username}.</h2>
+          <button className="button" onClick={this.goToShelves}>Shelves</button>
           <button className="button" onClick={this.props.logout}>Log out</button>
         </div>
       );
