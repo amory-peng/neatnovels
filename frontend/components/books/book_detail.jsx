@@ -41,7 +41,7 @@ class BookDetail extends React.Component {
             </p>
           </div>
           <Link to="/books" className="button">Back to Index</Link>
-
+          
         </div>
       </div>
 

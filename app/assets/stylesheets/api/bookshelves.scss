@@ -4,32 +4,101 @@
 
 .bookshelves-main-container {
   height: 100%;
+  min-height: 60vh;
   width: 100%;
+  max-width: 960px;
   padding: 100px;
+  display: flex;
+  margin: 0 auto;
 }
+
 .bookshelves-index-container {
   display: flex;
   flex-flow: column;
   align-items: center;
-
   padding: 20px;
   border: 1px solid $light-grey;
   border-bottom: 3px solid $light-grey;
-  width: 25%;
-  max-width: 250px;
+  width: 250px;
+  min-width: 250px;
   background: white;
-
 }
 
 .bookshelves-index-container > * {
   margin: 10px 0px;
-
 }
 
-.bookshelves-index-container > h2 {
+.bookshelves-index {
+  width: 100%;
 
 }
 
 .bookshelves-index > * {
-  padding: 3px 0px;
+  padding: 5px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bookshelves-index > li {
+  display: flex;
+  justify-content: center;
+}
+.bookshelves-index > li > .button {
+  padding: 0.5px;
+  border-radius: 0;
+  z-index: 50;
+}
+.bookshelf-detail-container {
+  padding: 50px;
+  width: 500px;
+  position: relative;
+}
+
+.bookshelf-detail-item-container {
+  border-bottom: 1px solid $light-grey;
+  padding: 20px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.bookshelf-detail-item-container > img {
+  height: 70px;
+  width: 70px;
+  cursor: pointer;
+}
+
+
+.bookshelf-detail-item-container > * {
+  padding: 0 20px;
+}
+
+.bookshelf-detail-item-container > .button {
+  margin-left: auto;
+  padding: 5px;
+}
+
+.bookshelf-detail-item-container span {
+
+}
+
+.bookshelf-detail-container > .button {
+  position: absolute;
+  right: 30px;
+  margin-top: 50px;
+}
+
+.add-form-container {
+  border: 2px solid $red;
+}
+
+.add-form-container > input {
+  height: 22px;
+  outline: none;
+
+}
+
+.add-form-container > .button {
+  border-radius: 0px;
 }

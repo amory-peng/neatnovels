@@ -6,7 +6,7 @@ class Greeting extends React.Component {
     super(props);
     this.goTo = this.goTo.bind(this);
     this.logout = this.logout.bind(this);
-    this.goToText = "Shelves";
+
   }
 
   logout() {
@@ -15,12 +15,8 @@ class Greeting extends React.Component {
 
   }
 
-  goTo() {
-    if (this.props.location.pathname === '/bookshelves') {
-      hashHistory.push('/books');
-    } else {
-      hashHistory.push('/bookshelves');
-    }
+  goTo(key) {
+    return () => hashHistory.push(key);
   }
 
   render () {
@@ -44,7 +40,8 @@ class Greeting extends React.Component {
       text = (
         <div id="greeting-container">
           <h2>Welcome, {this.props.currentUser.username}.</h2>
-          <button className="button" onClick={this.goTo}>{goToText}</button>
+          <button className="button" onClick={this.goTo('/bookshelves')}>Shelves</button>
+          <button className="button" onClick={this.goTo('/books')}>Books</button>
           <button className="button" onClick={this.logout}>Log out</button>
         </div>
       );
