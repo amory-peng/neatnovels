@@ -2,13 +2,12 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 import merge from 'lodash/merge';
 import BookshelfDetailItem from './bookshelf_detail_item';
+import AddBookshelfForm from './add_bookshelf_form_container';
 
 class BookshelfIndex extends React.Component{
   constructor(props) {
     super(props);
-    this.state = { name: "" };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+
     this.removeBookFromShelves = this.removeBookFromShelves.bind(this);
   }
 
@@ -16,15 +15,6 @@ class BookshelfIndex extends React.Component{
     this.props.requestBookshelves();
   }
 
-  handleChange(e) {
-    this.setState({ name: e.target.value });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    let newShelf = merge({}, this.state);
-    this.setState({ name: "" }, () => this.props.createBookshelf(newShelf));
-  }
 
   removeBookFromShelves(bookId) {
     return () => this.props.removeBookFromShelves(bookId);
@@ -112,12 +102,7 @@ class BookshelfIndex extends React.Component{
               </li>
               {bookshelvesList}
             </ul>
-            <form className="add-form-container" onSubmit={this.handleSubmit}>
-              <input type="text" onChange={this.handleChange} placeholder="Add a bookshelf!"
-                value={this.state.name}/>
-              <button className="button">Add shelf</button>
-
-            </form>
+          <AddBookshelfForm />
           </div>
             { this.renderBookList() }
         </div>
