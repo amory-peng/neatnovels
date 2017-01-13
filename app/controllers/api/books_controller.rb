@@ -1,18 +1,15 @@
 class Api::BooksController < ApplicationController
   def index
-    sleep 0.5
     @count = params[:lastId].to_i
     @books = Book.all.order('TITLE ASC').limit(12).offset(params[:lastId])
-    # .where("id > ?", params[:lastId])
   end
 
   def show
-    p params
-    @book = Book.find_by(id: params[:id])
+    @book = Book.includes(:bookshelves).find_by(id: params[:id])
     if @book
       render :show
     else
-      render json: "Book not found", status: 422
+      render json: ["Book not found"], status: 422
     end
   end
 

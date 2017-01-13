@@ -6,6 +6,7 @@ class BookshelfDetail extends React.Component{
   constructor(props) {
     super(props);
     this.deleteShelf = this.deleteShelf.bind(this);
+    this.removeBookFromShelf = this.removeBookFromShelf.bind(this);
   }
 
   componentWillMount() {
@@ -24,14 +25,19 @@ class BookshelfDetail extends React.Component{
     hashHistory.push('/bookshelves');
   }
 
+  removeBookFromShelf(bookId) {
+    return () =>
+    this.props.removeBookFromShelf(this.props.currentBookshelf.id, bookId);
+  }
+
   render() {
     let bookList = false;
     if (this.props.currentBookshelf.books) {
       bookList = Object.keys(this.props.currentBookshelf.books).map((bookId, idx) =>
         <li key={idx}>
-          <BookshelfDetailItem book={this.props.currentBookshelf.books[bookId]}
-            bookshelf={this.props.currentBookshelf}
-            removeBookFromShelf={this.props.removeBookFromShelf} />
+          <BookshelfDetailItem book={this.props.currentBookshelf.books[bookId]} />
+          <button onClick={this.removeBookFromShelf(bookId)}
+                  className="button">X</button>
         </li>
       );
     }

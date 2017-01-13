@@ -9,6 +9,15 @@ export const createShelving = ( name, bookId ) => (
 export const deleteShelving = (bookshelfId, bookId) => (
   $.ajax({
     method: 'DELETE',
-    url: `api/books/${bookId}/shelvings/${bookshelfId}`,
+    url: `api/books/${bookId}/shelvings/_`,
+    data: { bookshelf: { id: bookshelfId } }
+  })
+);
+
+export const deleteShelvings = ( bookId ) => (
+  $.ajax({
+    method: 'DELETE',
+    url: `api/books/${bookId}/shelvings/_`,
+    data: { bookshelf: { action: 'ALL' }}
   })
 );

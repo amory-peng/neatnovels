@@ -16,6 +16,8 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   has_many :bookshelves
+  has_many :shelvings, through: :bookshelves
+  has_many :books, through: :bookshelves
 
   attr_reader :password
 

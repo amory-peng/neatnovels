@@ -11,9 +11,7 @@ class AddBookForm extends React.Component {
   }
 
   componentDidMount() {
-    if (isEmpty(this.props.bookshelves)) {
-      this.props.requestBookshelves();
-    }
+    this.props.requestBookshelves();
   }
 
   handleSubmit(e) {
