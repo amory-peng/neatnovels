@@ -9,6 +9,7 @@ const mapStateToProps = ({ bookshelves }) => ({
 const mapDispatchToProps = dispatch => ({
   requestBookshelves: () => dispatch(requestBookshelves()),
   createBookshelf: shelf => dispatch(createBookshelf(shelf)),
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookshelfIndex);

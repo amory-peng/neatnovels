@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import AddBookForm from '../bookshelves/add_book_form_container';
 
 class BookDetail extends React.Component {
   constructor(props) {
@@ -7,7 +8,6 @@ class BookDetail extends React.Component {
   }
 
   componentDidMount() {
-    // console.log(this.props.bookId);
     this.props.requestBook(this.props.bookId);
   }
 
@@ -19,7 +19,6 @@ class BookDetail extends React.Component {
 
   render() {
     let text;
-    // console.log(this.props);
     if (this.props.currentBook) {
       text =
       <div className="bookdetail-container">
@@ -40,8 +39,9 @@ class BookDetail extends React.Component {
               {this.props.currentBook.description}
             </p>
           </div>
+          <AddBookForm bookId={this.props.bookId} />
           <Link to="/books" className="button">Back to Index</Link>
-          
+
         </div>
       </div>
 

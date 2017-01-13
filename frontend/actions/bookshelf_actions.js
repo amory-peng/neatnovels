@@ -1,8 +1,10 @@
 import * as BookshelfAPIUtil from '../util/bookshelf_util';
+import * as ShelvingAPIUtil from '../util/shelving_api_util';
 
 export const RECEIVE_BOOKSHELVES = 'RECEIVE_BOOKSHELVES';
 export const RECEIVE_BOOKSHELF = 'RECEIVE_BOOKSHELF';
 export const REMOVE_BOOKSHELF = 'REMOVE_BOOKSHELF';
+export const REMOVE_BOOKSHELVES = 'REMOVE_BOOKSHELVES';
 
 export const RECEIVE_CURRENT_BOOKSHELF = 'RECEIVE_CURRENT_BOOKSHELF';
 export const REMOVE_CURRENT_BOOKSHELF = 'REMOVE_CURRENT_BOOKSHELF';
@@ -32,6 +34,10 @@ export const removeCurrentBookshelf = () => ({
   type: REMOVE_CURRENT_BOOKSHELF,
 });
 
+export const removeBookshelves = () => ({
+  type: REMOVE_BOOKSHELVES
+});
+
 export const createBookshelf = shelf => dispatch => (
   BookshelfAPIUtil.createBookshelf(shelf).then(res => dispatch(receiveBookshelf(res)))
 );
@@ -52,4 +58,15 @@ export const deleteBookshelf = id => dispatch => (
   BookshelfAPIUtil.deleteBookshelf(id)
   .then(res => dispatch(removeBookshelf(res.id)))
   .then(() => dispatch(removeCurrentBookshelf()))
+);
+
+export const addBookToShelf = (name, bookId) => dispatch => (
+  ShelvingAPIUtil.createShelving(name, bookId)
+    .then(() => dispatch(requestBookshelves()))
+);
+
+export const removeBookFromShelf = (bookshelfId, bookId) => dispatch => (
+  ShelvingAPIUtil.deleteShelving(bookshelfId, bookId)
+    .then(() => dispatch(requestBookshelf(bookshelfId)))
+    .then(() => dispatch (requestCurrentBookshelf(bookshelfId)))
 );

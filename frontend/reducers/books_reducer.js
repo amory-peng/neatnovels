@@ -6,7 +6,6 @@ const booksReducer = (state={}, action) => {
     let newState;
     switch(action.type) {
       case RECEIVE_BOOKS:
-        console.log(action.books);
         return merge({}, state, action.books);
 
       // case RECEIVE_BOOK:

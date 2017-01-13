@@ -4,7 +4,6 @@ import { requestBooks } from '../../actions/book_actions';
 
 const mapStateToProps = ({ books }) => {
   const bookIds = Object.keys(books).sort((a,b) => a - b);
-  console.log(bookIds);
   const bookList = bookIds.map( id => books[id]);
   return ({ books: bookList });
 };

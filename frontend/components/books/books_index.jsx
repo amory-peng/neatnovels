@@ -43,9 +43,7 @@ class BooksIndex extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     let bookList;
-    // console.log(this.props.books);
     if (this.props.books.length > 0) {
       bookList = this.props.books.map( (book,idx) => (
         <li key={idx} onClick={this.handleClick(book.id)}><BooksIndexItem book={book} /></li>
