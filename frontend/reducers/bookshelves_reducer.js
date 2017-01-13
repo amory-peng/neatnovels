@@ -10,6 +10,9 @@ const BookshelvesReducer = (state=_defaultState, action) => {
   switch (action.type) {
     case RECEIVE_BOOKSHELVES:
       return action.shelves;
+      
+    case REMOVE_BOOKSHELVES:
+      return _defaultState;
 
     case RECEIVE_BOOKSHELF:
       console.log(state, {[action.shelf.id]: action.shelf});

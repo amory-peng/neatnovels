@@ -3,6 +3,7 @@ import * as BookAPIUtil from '../util/book_api_util';
 
 export const RECEIVE_BOOKS = 'RECEIVE_BOOKS';
 export const RECEIVE_BOOK = 'RECEIVE_BOOK';
+export const REMOVE_CURRENT_BOOK = 'REMOVE_CURRENT_BOOK';
 
 //POJOs
 export const receiveBooks = books => ({
@@ -15,6 +16,9 @@ export const receiveBook = book => ({
   book
 });
 
+export const removeCurrentBook = () => ({
+  type: REMOVE_CURRENT_BOOK
+});
 //thunks
 export const requestBooks = lastId => dispatch => (
   BookAPIUtil.fetchBooks(lastId)

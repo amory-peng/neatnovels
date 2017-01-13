@@ -25,9 +25,11 @@ class BooksIndex extends React.Component {
   }
 
   handleScroll() {
-    if (document.body.scrollHeight === document.body.scrollTop + window.innerHeight &&
+    if (document.body.scrollHeight ===
+        document.body.scrollTop + window.innerHeight &&
         this.state.hasMore === true ) {
-      this.setState( {loading: true }, ()=> this.props.requestBooks(this.state.lastBookId));
+          this.setState({loading: true },
+                        ()=> this.props.requestBooks(this.state.lastBookId));
     }
   }
 

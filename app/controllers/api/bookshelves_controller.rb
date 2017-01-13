@@ -5,7 +5,6 @@ class Api::BookshelvesController < ApplicationController
 
   def show
     @bookshelf = Bookshelf.includes(:books).where(user_id: current_user.id).find_by(id: params[:id])
-    p @bookshelf
     if @bookshelf.nil?
       render json: ["You don't belong here."], status: 422
     else

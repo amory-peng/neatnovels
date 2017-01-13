@@ -9,8 +9,9 @@ const BookshelfDetailReducer = (state=_defaultState, action) => {
       return action.shelf;
 
     case REMOVE_CURRENT_BOOKSHELF:
+      console.log("hit here");
       return _defaultState;
-      
+
     default:
       return state;
   }

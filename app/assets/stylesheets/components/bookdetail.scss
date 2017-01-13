@@ -2,6 +2,7 @@
   height: 100%;
   width: 100%;
   display: flex;
+  position: relative;
 }
 
 .bookdetail-container img {
@@ -12,6 +13,7 @@
 
 .book-desc-container {
   padding-top: 60px;
+  margin-right: 60px;
 }
 
 .book-desc-container > * {

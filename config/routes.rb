@@ -6,9 +6,14 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
     resources :books, only: [:index, :show] do
-      resources :shelvings, only: [:create, :destroy]
+      delete "bookshelves", to: "shelvings#destroy_all"
     end
-    resources :bookshelves, only: [:index, :show, :create, :update, :destroy]
+    resources :bookshelves, only: [:index, :show, :create, :update, :destroy] do
+      post "books/:book_id", to: "shelvings#create"
+      delete "books/:book_id", to: "shelvings#destroy"
+    end
 
+    # post "books/:book_id/bookshelves/:bookshelves_id", to: "api/shelvings#create"
+    # delete "books/:book_id/bookshelves/:bookshelves_id" to:"api/shelvings#destroy"
   end
 end

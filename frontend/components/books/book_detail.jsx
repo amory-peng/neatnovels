@@ -7,11 +7,15 @@ class BookDetail extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.requestBook(this.props.bookId);
   }
 
-  componentWillReceiveProps(newProps) {
+  componentWillUnmount() {
+    this.props.removeCurrentBook();
+  }
+
+  componentWillUpdate(newProps) {
     if (this.props.bookId !== newProps.bookId) {
       this.props.requestBook(newProps.bookId);
     }
@@ -19,7 +23,7 @@ class BookDetail extends React.Component {
 
   render() {
     let text;
-    if (this.props.currentBook) {
+    if (this.props.currentBook.title) {
       text =
       <div className="bookdetail-container">
         <img src={this.props.currentBook.image_url} />
@@ -44,15 +48,11 @@ class BookDetail extends React.Component {
 
         </div>
       </div>
-
-
       ;
     }
-
     return(
       <div className="main-container">
         {text}
-
       </div>
     );
   }

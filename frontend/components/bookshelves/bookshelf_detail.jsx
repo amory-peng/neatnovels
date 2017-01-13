@@ -13,6 +13,9 @@ class BookshelfDetail extends React.Component{
     this.props.requestCurrentBookshelf(this.props.bookshelfId);
   }
 
+  componentWillUnmount() {
+    this.props.removeCurrentBookshelf();
+  }
 
   componentWillReceiveProps(newProps) {
     if (this.props.params.bookshelfId !== newProps.params.bookshelfId) {
@@ -45,15 +48,19 @@ class BookshelfDetail extends React.Component{
     if (!bookList) {
       bookList = <li>No books yet!</li>;
     }
-    return(
-      <div className="bookshelf-detail-container">
-        <h1>{ this.props.currentBookshelf.name }</h1>
-        <ul>
-          { bookList }
-        </ul>
-        <button className="button" onClick={this.deleteShelf}>Delete shelf</button>
-      </div>
-    );
+    if (Object.keys(this.props.currentBookshelf).length > 0) {
+      return(
+        <div className="bookshelf-detail-container">
+          <h1>{ this.props.currentBookshelf.name }</h1>
+          <ul>
+            { bookList }
+          </ul>
+          <button className="button" onClick={this.deleteShelf}>Delete shelf</button>
+        </div>
+      );
+    } else {
+      return <div></div>;
+    }
   }
 }
 

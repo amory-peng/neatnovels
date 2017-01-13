@@ -15,7 +15,7 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 6, allow_nil: true}
   after_initialize :ensure_session_token
 
-  has_many :bookshelves
+  has_many :bookshelves, dependent: :destroy
   has_many :shelvings, through: :bookshelves
   has_many :books, through: :bookshelves
 

@@ -10,7 +10,7 @@ class Greeting extends React.Component {
   }
 
   logout() {
-    this.props.logout()
+    this.props.logout().then(() => this.props.removeBookshelves())
     .then(() => hashHistory.push('/login'));
 
   }

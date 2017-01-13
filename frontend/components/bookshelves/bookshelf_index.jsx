@@ -7,7 +7,6 @@ import AddBookshelfForm from './add_bookshelf_form_container';
 class BookshelfIndex extends React.Component{
   constructor(props) {
     super(props);
-
     this.removeBookFromShelves = this.removeBookFromShelves.bind(this);
   }
 
@@ -15,7 +14,10 @@ class BookshelfIndex extends React.Component{
     this.props.requestBookshelves();
   }
 
-
+  componentWillUnount() {
+    this.props.removeBookshelves();
+  }
+  
   removeBookFromShelves(bookId) {
     return () => this.props.removeBookFromShelves(bookId);
   }
@@ -41,7 +43,9 @@ class BookshelfIndex extends React.Component{
 
   renderBookList() {
     const allBooks = this.allBooks();
+    let count = 0;
     const allBooksList = Object.keys(allBooks).map((bookId, idx) => {
+      count++;
       return (
         <li key={idx}>
           <BookshelfDetailItem book={allBooks[bookId]} />
@@ -68,7 +72,7 @@ class BookshelfIndex extends React.Component{
 
   render() {
 
-    if (!this.props.bookshelves) {
+    if (!this.props.bookshelves || Object.keys(this.props.bookshelves).length === 0) {
       return <div></div>;
     } else {
       let totalCount = 0;

@@ -1,7 +1,7 @@
 class Api::ShelvingsController < ApplicationController
   def create
     bookshelf = Bookshelf.find_by(
-      name: shelving_params[:name],
+      id: params[:bookshelf_id],
       user_id: current_user.id
     )
     @shelving = Shelving.new(
@@ -16,19 +16,18 @@ class Api::ShelvingsController < ApplicationController
   end
 
   def destroy
-    p params
-    if shelving_params[:action] == "ALL"
-      @shelvings = current_user.shelvings.where(book_id: params[:book_id])
-      @shelvings.each { |shelving| shelving.destroy! }
-      render json: {}
-    else
-      @shelving = Shelving.find_by(
-        book_id: params[:book_id],
-        bookshelf_id: shelving_params[:id]
-      )
-      @shelving.destroy!
-      render json: {}
-    end
+    @shelving = Shelving.find_by(
+      book_id: params[:book_id],
+      bookshelf_id: params[:bookshelf_id]
+    )
+    @shelving.destroy!
+    render json: {}
+  end
+
+  def destroy_all
+    @shelvings = current_user.shelvings.where(book_id: params[:book_id])
+    @shelvings.each { |shelving| shelving.destroy! }
+    render json: {}
   end
 
   def shelving_params

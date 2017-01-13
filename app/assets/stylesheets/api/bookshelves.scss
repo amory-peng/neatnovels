@@ -55,6 +55,14 @@
   position: relative;
 }
 
+.bookshelf-detail-container > ul > li {
+  display: flex;
+  align-items: center;
+}
+
+.bookshelf-detail-container > ul > li > .button {
+  height: 23px;
+}
 .bookshelf-detail-item-container {
   border-bottom: 1px solid $light-grey;
   padding: 20px;

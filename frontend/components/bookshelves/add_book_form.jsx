@@ -5,33 +5,35 @@ import { isEmpty } from 'lodash';
 class AddBookForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { name: "Choose a shelf..." };
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.requestBookshelves();
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.addBookToShelf(this.state.name, this.props.bookId);
-    this.setState( {name: "Choose a shelf..."} );
 
-  }
-
-  handleChange(e) {
-    this.setState({ name: e.target.value });
-  }
 
   render() {
-    let bookshelfOptions;
+    let bookshelfList;
     if (this.props.bookshelves) {
-      bookshelfOptions = Object.keys(this.props.bookshelves).map( (id, idx) => {
+      bookshelfList = Object.keys(this.props.bookshelves).map( (id) => {
+        const currentShelf = this.props.bookshelves[id];
+        let sym = "💔";
+        let handleClick = ()=> () => this.props.addBookToShelf(id, this.props.bookId);
+        if (currentShelf.books) {
+          Object.keys(currentShelf.books).forEach( bookId => {
+            if (this.props.bookId === bookId) {
+              sym = "❤️";
+              handleClick = () => () => this.props.removeBookFromShelf(id, this.props.bookId);
+            }
+          });
+        }
 
         return(
-          <option key={idx}>{this.props.bookshelves[id].name}</option>
+          <li key={id} value={id} onClick={handleClick()}>
+            <div className="heart">{sym}</div>{this.props.bookshelves[id].name}
+          </li>
           );
         }
       );
@@ -39,14 +41,14 @@ class AddBookForm extends React.Component {
 
     return(
       <div>
-      <form onSubmit={this.handleSubmit} >
-        <select onChange={this.handleChange} defaultValue={ this.state.name }>
-          <option disabled>Choose a shelf...</option>
-          { bookshelfOptions }
-        </select>
-        <button className="button">Add</button>
-      </form>
-    </div>
+        <div className="add-to-shelf-container">
+          <h3>Add to shelf...</h3>
+          <ul>
+            { bookshelfList }
+          </ul>
+        </div>
+
+      </div>
     );
   }
 }

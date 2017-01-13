@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { requestBook } from '../../actions/book_actions';
+import { requestBook, removeCurrentBook } from '../../actions/book_actions';
 import BookDetail from './book_detail';
 
 const mapStateToProps = ({ currentBook }, ownProps) => {
@@ -10,7 +10,8 @@ const mapStateToProps = ({ currentBook }, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  requestBook: id => dispatch(requestBook(id))
+  requestBook: id => dispatch(requestBook(id)),
+  removeCurrentBook: () => dispatch(removeCurrentBook())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookDetail);

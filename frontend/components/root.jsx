@@ -29,7 +29,7 @@ const Root = ({ store }) => (
         <Route path="login" component={ SessionForm } onEnter={_redirectIfLoggedIn} />
         <Route path="signup" component={ SessionForm } onEnter={_redirectIfLoggedIn}/>
         <Route path="books" component={ BooksIndex } onEnter={_ensureLoggedIn} />
-        <Route path="books/:bookId" component={ BookDetail } onEnter={_ensureLoggedIn} />
+          <Route path="books/:bookId" component={ BookDetail } onEnter={_ensureLoggedIn} />
 
         <Route path="bookshelves" component= { BookshelfIndex } onEnter={_ensureLoggedIn}>
           <Route path=":bookshelfId" component={ BookshelfDetail } onEnter={_ensureLoggedIn} />

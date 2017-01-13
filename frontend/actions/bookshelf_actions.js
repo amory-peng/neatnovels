@@ -60,8 +60,8 @@ export const deleteBookshelf = id => dispatch => (
   .then(() => dispatch(removeCurrentBookshelf()))
 );
 
-export const addBookToShelf = (name, bookId) => dispatch => (
-  ShelvingAPIUtil.createShelving(name, bookId)
+export const addBookToShelf = (bookshelfId, bookId) => dispatch => (
+  ShelvingAPIUtil.createShelving(bookshelfId, bookId)
     .then(() => dispatch(requestBookshelves()))
 );
 
