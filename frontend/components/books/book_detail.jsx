@@ -43,8 +43,10 @@ class BookDetail extends React.Component {
               {this.props.currentBook.description}
             </p>
           </div>
-          <AddBookForm bookId={this.props.bookId} />
-          <Link to="/books" className="button">Back to Index</Link>
+          <div className="book-detail-form-container">
+            <AddBookForm bookId={this.props.bookId} />
+            <Link to="/books" className="button">Back to Index</Link>
+          </div>
 
         </div>
       </div>

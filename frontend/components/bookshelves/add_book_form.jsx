@@ -1,6 +1,7 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
 import { isEmpty } from 'lodash';
+import AddBookFormItem from './add_book_form_item';
 
 class AddBookForm extends React.Component {
   constructor(props) {
@@ -12,43 +13,46 @@ class AddBookForm extends React.Component {
     this.props.requestBookshelves();
   }
 
-
-
-  render() {
+  bookshelfList() {
     let bookshelfList;
     if (this.props.bookshelves) {
       bookshelfList = Object.keys(this.props.bookshelves).map( (id) => {
         const currentShelf = this.props.bookshelves[id];
-        let sym = "💔";
-        let handleClick = ()=> () => this.props.addBookToShelf(id, this.props.bookId);
+        let sym = "ph";
+        let handleClick = this.props.addBookToShelf;
         if (currentShelf.books) {
           Object.keys(currentShelf.books).forEach( bookId => {
             if (this.props.bookId === bookId) {
               sym = "❤️";
-              handleClick = () => () => this.props.removeBookFromShelf(id, this.props.bookId);
+              handleClick = this.props.removeBookFromShelf;
             }
           });
         }
 
         return(
-          <li key={id} value={id} onClick={handleClick()}>
-            <div className="heart">{sym}</div>{this.props.bookshelves[id].name}
+          <li key={id} value={id}>
+            <AddBookFormItem shelf={currentShelf} sym={sym} bookId={this.props.bookId} handleClick={handleClick}/>
           </li>
           );
         }
       );
     }
+    return bookshelfList;
+  }
 
+
+  render() {
+    const bookshelfList = this.bookshelfList();
     return(
-      <div>
-        <div className="add-to-shelf-container">
-          <h3>Add to shelf...</h3>
-          <ul>
-            { bookshelfList }
-          </ul>
-        </div>
 
+      <div className="add-to-shelf-container">
+        <h3 className="add-to-shelf-label">&#9660; Add to shelf...</h3>
+        <ul>
+          { bookshelfList }
+        </ul>
       </div>
+
+
     );
   }
 }

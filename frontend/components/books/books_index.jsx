@@ -25,7 +25,7 @@ class BooksIndex extends React.Component {
   }
 
   handleScroll() {
-    if (document.body.scrollHeight ===
+    if (document.body.scrollHeight - 200 <
         document.body.scrollTop + window.innerHeight &&
         this.state.hasMore === true ) {
           this.setState({loading: true },

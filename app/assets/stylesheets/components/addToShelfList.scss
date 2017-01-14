@@ -12,24 +12,34 @@
 }
 
 .add-to-shelf-container > ul > li {
-
-  padding: 5px;
+  color: $red;
+  padding: 15px;
   background: white;
   cursor: pointer;
+  height: 25px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
 }
 
-.add-to-shelf-container li > .heart {
+.add-to-shelf-container li .heart {
   display: inline;
   padding-right: 10px;
   font-size: 14px;
-  color: transparent;
-  text-shadow: 0 0 0 red;
+  min-width: 50px;
+  max-width: 50px;
+  color: $light-red;
+}
+
+.abf-item {
+  width: 100%;
 }
 
 .add-to-shelf-container > ul > li:hover {
-  background: $red;
-  color: white;
+  background: $light-red;
 }
+
+
 .add-to-shelf-container:hover > ul {
   display: block;
   position: relative;

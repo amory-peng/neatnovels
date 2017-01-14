@@ -1,5 +1,6 @@
 class Api::ShelvingsController < ApplicationController
   def create
+    sleep 1
     bookshelf = Bookshelf.find_by(
       id: params[:bookshelf_id],
       user_id: current_user.id
@@ -16,6 +17,7 @@ class Api::ShelvingsController < ApplicationController
   end
 
   def destroy
+    sleep 1
     @shelving = Shelving.find_by(
       book_id: params[:book_id],
       bookshelf_id: params[:bookshelf_id]

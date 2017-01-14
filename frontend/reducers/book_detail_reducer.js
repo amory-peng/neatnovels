@@ -6,7 +6,6 @@ const bookDetailReducer = (state={}, action) => {
     case RECEIVE_BOOK:
       return action.book;
     case REMOVE_CURRENT_BOOK:
-      console.log("hit reducer");
       return {};
     default:
       return state;
