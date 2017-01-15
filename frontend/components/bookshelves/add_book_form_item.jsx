@@ -8,7 +8,7 @@ class AddBookFormItem extends React.Component{
   }
 
   componentWillReceiveProps(newProps) {
-    if (this.state.sym === "💤" ) {
+    if (this.state.sym !== newProps.sym ) {
       this.setState({sym: newProps.sym});
     }
   }

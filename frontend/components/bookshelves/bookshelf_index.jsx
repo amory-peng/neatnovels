@@ -10,14 +10,10 @@ class BookshelfIndex extends React.Component{
     this.removeBookFromShelves = this.removeBookFromShelves.bind(this);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.requestBookshelves();
   }
 
-  componentWillUnount() {
-    this.props.removeBookshelves();
-  }
-  
   removeBookFromShelves(bookId) {
     return () => this.props.removeBookFromShelves(bookId);
   }

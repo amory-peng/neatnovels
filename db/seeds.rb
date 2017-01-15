@@ -9,15 +9,16 @@
 User.create(username: 'jimbo', password: 'password')
 
 Book.create(
-  title: "Harry Potter",
+  title: "Harry Potter and the Cursed Child – Parts One and Two (Special Rehearsal Edition)",
   author: "JK Rowling",
-  description: "follow a boy wizard and his magical adventures",
-  year: 1995
+  description: "<p>Based on an original new story by J.K. Rowling, Jack Thorne and John Tiffany, a new play by Jack Thorne, Harry Potter and the Cursed Child is the eighth story in the Harry Potter series and the first official Harry Potter story to be presented on stage. The play received its world premiere in London’s West End on 30th July 2016.</p> <p>It was always difficult being Harry Potter and it isn’t much easier now that he is an overworked employee of the Ministry of Magic, a husband and father of three school-age children.</p> <p>While Harry grapples with a past that refuses to stay where it belongs, his youngest son Albus must struggle with the weight of a family legacy he never wanted. As past and present fuse ominously, both father and son learn the uncomfortable truth: sometimes, darkness comes from unexpected places.</p>",
+  year: 2016,
+  image_url: "http://books.google.com/books/content?id=tcSMCwAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE73oD2Cie21Jun4Dyejl4mHxTT4AqowSX9vJVFXX18ENh00krLPQ8T-d4cbqz7n8XroKOiIr5RB-NFJaY1w946u7Z4iDK3RVBrOnpMKlV_vmEXyTStg&source=gbs_api"
 )
 
-Bookshelf.create(name: "Want to Read", user_id: 1)
-Bookshelf.create(name: "Currently Reading", user_id: 1)
-Bookshelf.create(name: "Already read", user_id: 1)
+Bookshelf.create(user_id: 1, name: "read", protect: true)
+Bookshelf.create(user_id: 1, name: "currently reading", protect: true)
+Bookshelf.create(user_id: 1, name: "to read", protect: true)
 
 Shelving.create(bookshelf_id: 1, book_id: 1)
 

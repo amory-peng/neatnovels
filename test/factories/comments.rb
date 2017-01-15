@@ -1,17 +1,17 @@
 # == Schema Information
 #
-# Table name: bookshelves
+# Table name: comments
 #
 #  id         :integer          not null, primary key
 #  user_id    :integer
-#  name       :string
+#  book_id    :integer
+#  body       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  protect    :boolean          default("false")
 #
 
 FactoryGirl.define do
-  factory :bookshelf do
+  factory :comment do
     
   end
 end

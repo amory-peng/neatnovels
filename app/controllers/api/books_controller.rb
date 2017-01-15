@@ -5,7 +5,7 @@ class Api::BooksController < ApplicationController
   end
 
   def show
-    @book = Book.includes(:bookshelves).find_by(id: params[:id])
+    @book = Book.includes(:bookshelves, :comments).find_by(id: params[:id])
     if @book
       render :show
     else

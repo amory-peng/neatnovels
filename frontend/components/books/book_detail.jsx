@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 import AddBookForm from '../bookshelves/add_book_form_container';
+import CommentsIndex from '../comments/comments_index_container';
+import CommentForm from '../comments/comment_form_container';
 
 class BookDetail extends React.Component {
   constructor(props) {
@@ -55,7 +57,10 @@ class BookDetail extends React.Component {
     return(
       <div className="main-container">
         {text}
+        <CommentForm bookId = {this.props.bookId} />
+        <CommentsIndex bookId={this.props.bookId} />
       </div>
+
     );
   }
 }

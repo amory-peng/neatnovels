@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170111221155) do
+ActiveRecord::Schema.define(version: 20170114173423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20170111221155) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "image_url"
     t.string   "author"
+    t.text     "image_url"
     t.index ["author"], name: "index_books_on_author", using: :btree
     t.index ["title"], name: "index_books_on_title", using: :btree
     t.index ["year"], name: "index_books_on_year", using: :btree
@@ -31,10 +31,21 @@ ActiveRecord::Schema.define(version: 20170111221155) do
   create_table "bookshelves", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "protect",    default: false
     t.index ["name"], name: "index_bookshelves_on_name", using: :btree
     t.index ["user_id"], name: "index_bookshelves_on_user_id", using: :btree
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "book_id"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_comments_on_book_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
   create_table "shelvings", force: :cascade do |t|

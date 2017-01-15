@@ -1,18 +1,18 @@
 # == Schema Information
 #
-# Table name: bookshelves
+# Table name: comments
 #
 #  id         :integer          not null, primary key
 #  user_id    :integer
-#  name       :string
+#  book_id    :integer
+#  body       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  protect    :boolean          default("false")
 #
 
 require 'test_helper'
 
-class BookshelfTest < ActiveSupport::TestCase
+class CommentTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -7,7 +7,6 @@
   max-width: 1440px;
   margin: 0 auto;
   display: flex;
-  background: $lighter-grey;
 }
 
 .books-index-container {
@@ -21,29 +20,34 @@
 
 .books-index-container > li {
   flex-basis: 200px;
-  
-  border-bottom: 2px solid $red;
   margin: 10px 10px;
 }
 
 .books-index-item {
   cursor: pointer;
   display: flex;
+  position: relative;
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  height: 350px;
-  width: 250px;
+  height: 348px;
+  width: 261px;
   align-self: flex-start;
 }
 
-.books-index-item img {
+.cover {
+  background: black;
+  opacity: 0;
+  z-index: 10;
+}
+
+.books-index-item img,
+.books-index-item .cover {
   height: 100%;
   min-height: 100%;
   width: 100%;
-  background: white;
   transition: width 0.2s, min-height 0.2s;
-  position: relative;
+  position: absolute;
 }
 
 .books-index-desc{
@@ -51,11 +55,19 @@
   position: absolute;
 }
 
-.books-index-item:hover img{
+.books-index-item:hover img,
+.books-index-item:hover .cover{
   min-height: 400px;
   width: 300px;
-  z-index: 99;
-  // background: rgba(0, 0, 0, 0.25);
+
+}
+
+.books-index-item:hover img {
+  z-index: 5;
+}
+
+.books-index-item:hover .cover {
+  opacity: 0.5;
 }
 .books-index-item:hover .books-index-desc {
   display: flex;
@@ -66,7 +78,7 @@
 
 .books-index-item h1{
   font-size: 20px;
-  color: $red;
+  color: white;
   width: 250px;
   text-align: center;
   margin-bottom: 10px;

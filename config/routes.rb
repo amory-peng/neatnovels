@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :books, only: [:index, :show] do
       delete "bookshelves", to: "shelvings#destroy_all"
+      resources :comments, only: [:create, :index]
     end
     resources :bookshelves, only: [:index, :show, :create, :update, :destroy] do
       post "books/:book_id", to: "shelvings#create"

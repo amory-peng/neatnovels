@@ -30,8 +30,12 @@ class Api::BookshelvesController < ApplicationController
 
   def destroy
     @bookshelf = Bookshelf.find_by(id: params[:id])
-    @bookshelf.destroy!
-    render :show
+    if @bookshelf.protect
+      render json: "protected bookshelf", status: 422
+    else
+      @bookshelf.destroy!
+      render :show
+    end
   end
 
   def bookshelf_params

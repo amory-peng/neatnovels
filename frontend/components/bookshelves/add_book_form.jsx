@@ -13,12 +13,15 @@ class AddBookForm extends React.Component {
     this.props.requestBookshelves();
   }
 
+  componentWillReceiveProps() {
+    console.log("hit here");
+  }
   bookshelfList() {
     let bookshelfList;
     if (this.props.bookshelves) {
       bookshelfList = Object.keys(this.props.bookshelves).map( (id) => {
         const currentShelf = this.props.bookshelves[id];
-        let sym = "ph";
+        let sym = "__";
         let handleClick = this.props.addBookToShelf;
         if (currentShelf.books) {
           Object.keys(currentShelf.books).forEach( bookId => {
@@ -46,7 +49,7 @@ class AddBookForm extends React.Component {
     return(
 
       <div className="add-to-shelf-container">
-        <h3 className="add-to-shelf-label">&#9660; Add to shelf...</h3>
+        <h3 className="add-to-shelf-label"> &#9660;&nbsp;&nbsp;&nbsp;Add to shelf...</h3>
         <ul>
           { bookshelfList }
         </ul>

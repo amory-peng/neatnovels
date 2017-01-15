@@ -6,8 +6,10 @@
 }
 
 .bookdetail-container img {
-  height: 500px;
-  width: 400px;
+  min-height: 500px;
+  max-height: 500px;
+  min-width: 350px;
+  max-width: 350px;
   padding: 60px;
 }
 
@@ -46,5 +48,6 @@
   font-size: 12px;
   color: white;
   padding: 7px;
+  padding-left: 20px;
   background: $red;
 }
