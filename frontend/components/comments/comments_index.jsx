@@ -7,18 +7,18 @@ class CommentsIndex extends React.Component{
   }
 
   componentWillMount() {
+    this.props.clearComments();
     this.props.requestComments();
   }
 
-
   render() {
-
     const commentList = this.props.comments.map((comment, idx) => (
-      <li key={idx}>{comment.username} says: {comment.body} </li>
+      <li key={idx}>{comment.username} on {comment.created_at.slice(0,10)} says: {comment.body} </li>
     ));
+
     return(
       <div>
-        <ul>
+        <ul className="comment-list">
           {commentList}
         </ul>
       </div>

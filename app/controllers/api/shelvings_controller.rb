@@ -1,22 +1,23 @@
 class Api::ShelvingsController < ApplicationController
   def create
     sleep 1
-    bookshelf = Bookshelf.find_by(
+    current_bookshelf = Bookshelf.find_by(
       id: params[:bookshelf_id],
       user_id: current_user.id
     )
 
     @shelving = Shelving.new(
-      bookshelf_id: bookshelf.id,
+      bookshelf_id: current_bookshelf.id,
       book_id: params[:book_id]
     )
 
     if @shelving.save!
-      #if bookshelf is protected, remove shelvings from other protected bookshelves
-      if bookshelf.protect
-        shelvings = Shelving.where(book_id: params[:book_id])
+      #if bookshelf is protected, remove shelvings from current user's other protected bookshelves
+      if current_bookshelf.protect
+        shelvings = Shelving.includes(:bookshelf).where(book_id: params[:book_id])
         shelvings.each do |shelving|
-          if shelving.bookshelf.protect && shelving.id != @shelving.id
+          next if shelving.id == @shelving.id
+          if current_user.id == shelving.bookshelf.user_id && shelving.bookshelf.protect
             shelving.destroy!
           end
         end

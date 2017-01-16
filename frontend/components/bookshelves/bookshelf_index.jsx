@@ -51,19 +51,14 @@ class BookshelfIndex extends React.Component{
       );
     });
 
-  if (this.props.children) {
-    return this.props.children;
-  } else {
-    return (
+    return [(
       <div className="bookshelf-detail-container">
         <h1>All</h1>
-        <ul>
-          {allBooksList}
-        </ul>
+          <ul>
+            {allBooksList}
+          </ul>
       </div>
-    );
-  }
-
+      ), count];
   }
 
   render() {
@@ -71,7 +66,11 @@ class BookshelfIndex extends React.Component{
     if (!this.props.bookshelves || Object.keys(this.props.bookshelves).length === 0) {
       return <div></div>;
     } else {
-      let totalCount = 0;
+      const renderBookList = this.renderBookList();
+
+      const bookList = this.props.children ? this.props.children : renderBookList[0];
+      const totalCount = renderBookList[1];
+
       let bookshelvesList = Object.keys(this.props.bookshelves)
       .map((shelf, idx) => {
         let currentShelf = this.props.bookshelves[shelf];
@@ -79,7 +78,7 @@ class BookshelfIndex extends React.Component{
         if (currentShelf.books) {
           Object.keys(currentShelf.books).forEach( _ => {
             bookCount += 1;
-            totalCount += 1;
+
           });
         }
         return (
@@ -104,7 +103,7 @@ class BookshelfIndex extends React.Component{
             </ul>
           <AddBookshelfForm />
           </div>
-            { this.renderBookList() }
+            { bookList }
         </div>
       );
     }

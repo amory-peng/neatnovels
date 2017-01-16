@@ -15,18 +15,25 @@ class CommentForm extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log("submit");
     const newComment = merge({}, this.state);
     this.setState({body: ""}, () => this.props.createComment(newComment));
   }
 
   render() {
+    let errorText;
+    if (this.props.errors.length > 0) {
+      errorText = this.props.errors.map((error, idx) => (
+        <li key={idx}>{error}</li>
+      ));
+    }
     return(
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <textarea onChange={this.handleChange}></textarea>
+        <h2>Leave a comment!</h2>
+        <form onSubmit={this.handleSubmit} className="comment-form">
+          <textarea onChange={this.handleChange} value={this.state.body}></textarea>
           <input type="submit" className="button" value="Add Comment"></input>
         </form>
+        <ul className="comment-errors-container">{errorText}</ul>
       </div>
     );
   }

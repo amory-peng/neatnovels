@@ -5,8 +5,7 @@ class Api::CommentsController < ApplicationController
       book_id: params[:book_id],
       body: comment_params[:body]
     )
-    if @comment.save!
-      p @comment.user.username
+    if @comment.save
       render :show
     else
       render json: @comment.errors.full_messages, status: 422
@@ -15,7 +14,7 @@ class Api::CommentsController < ApplicationController
 
   def index
     @comments = Comment.includes(:user).where(book_id: params[:book_id])
-                       .order(:created_at)
+                       .order(created_at: :desc)
   end
 
   def comment_params

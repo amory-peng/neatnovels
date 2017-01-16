@@ -49,13 +49,17 @@ class BookshelfDetail extends React.Component{
       bookList = <li>No books yet!</li>;
     }
     if (Object.keys(this.props.currentBookshelf).length > 0) {
+      let deleteButton;
+      if (!this.props.currentBookshelf.protect) {
+        deleteButton = <button className="button" onClick={this.deleteShelf}>Delete shelf</button>
+      }
       return(
         <div className="bookshelf-detail-container">
           <h1>{ this.props.currentBookshelf.name }</h1>
           <ul>
             { bookList }
           </ul>
-          <button className="button" onClick={this.deleteShelf}>Delete shelf</button>
+          {deleteButton}
         </div>
       );
     } else {

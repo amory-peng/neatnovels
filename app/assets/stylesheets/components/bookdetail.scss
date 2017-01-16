@@ -31,6 +31,7 @@
 
 .book-desc-summary {
   padding-top: 20px;
+  max-width: 500px;
 }
 
 .book-desc-container .button {
@@ -38,7 +39,7 @@
 
 .book-detail-form-container {
   display: flex;
-  min-width: 500px;
+  min-width: 400px;
   justify-content: space-between;
   height: 28px;
 }

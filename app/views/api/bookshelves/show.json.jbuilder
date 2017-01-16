@@ -1,4 +1,4 @@
-json.extract! @bookshelf, :name, :id, :user_id
+json.extract! @bookshelf, :name, :id, :user_id, :protect
 
 
 json.books do
