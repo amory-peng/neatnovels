@@ -14,3 +14,10 @@ export const fetchBook = id => (
     url: `api/books/${id}`
   })
 );
+
+export const searchBooks = query => {
+  return $.ajax({
+    method: 'GET',
+    url: `api/books/search/${query}`
+  });
+};

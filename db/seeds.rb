@@ -29,6 +29,77 @@ Shelving.create(bookshelf_id: 1, book_id: 1)
 # end
 #
 # Book.create(bookArray)
+
+Book.create([
+  {title: "Clojure Reactive Programming", author: "Leonardo Borges", description: 'If you are a Clojure developer who is interested in using Reactive Programming to build asynchronous and concurrent applications, this book is for you. Knowledge of Clojure and Leiningen is required. Basic understanding of ClojureScript will be helpful for the web chapters, although it is not strictly necessary.', image_url: "http://books.google.com/books/content?id=1tePBwAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE72wRRkyxMD14rpMHgr0FwiGoIFwsOvFCUDWOHZVwV2C-odPt39Jnv3So-Pj05_BM0tG8MAhVJ29c-Y8OesbzpX3BxS2m1EoGz_EbTvBady9NAJ00homSoFYc_nszFPe3wkXMFBl&source=gbs_api", year: "2015"},{title: "Learning Behavior-driven Development with JavaScript", author: "Enrique Amodeo", description: 'This book is ideal for any JavaScript developer who is interested in producing well-tested code. If you have no prior experience with testing, Node.js, or any other tool, do not worry, as they will be explained from scratch.', image_url: "http://books.google.com/books/content?id=Fru9BgAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE701Pp2KuHtqgTwMflCLbkJMJpooIP2A5CvTAmCAMMVPlVKdceVi3-YBQ3sdnHOWGBFHiVNoOmaK4OimjO8H3ahyo5JjqZY1mbDWcDeFTbATfaDSLofVLJkU0TGkl3qnU0Mq5-2R&source=gbs_api", year: "2015"},
+  {title: "Reactjs", author: "Nathan Hull", description: 'This book is a discussion about React.js, which is a JavaScript library. This library is very useful for the development of web apps. The first chapter of this book is an exploration of how to use React.js together with the Bootstrap framework. Bootstrap is very important in the development of responsive web pages. This book will guide you on how to use these two tools together for development of very amazing apps. In this section, you will learn how to create an editor similar to the one you use when composing an email. The two tools have been combined together and then a guide on how to create a form for composing an email created. Unit testing is also explored in this book. The book guides you on how to carry out unit testing in React.js. However, the guide covers how to do this using both React.js and Redux. The various tests which fall under unit testing are examined, including the middleware test and the Reduce tests. . The book also guides you on how to create a time picker in React.js. The various functions and libraries which can be used for doing this are discussed. An explanation of the classes used has been provided after each. The process of creating isomorphic apps in React.js has been presented step by step. React.js has been combined with the Baobab tree so as to do this. You will learn how to inject state into your app by the use of either "props" or "context." Here is preview of what you\'ll learn: - React and Bootstrap - Unit Testing - Creating a Time Picker - Isomorphic Apps', image_url: "null", year: "2016"},
+  {title: "JavaScript and JQuery", author: "Jon Duckett", description: 'A visual and accessible guide to JavaScript and jQuery in a built-to-last hardcover edition
+In JavaScript & jQuery renowned author Jon Duckett discards the traditional programming book template and approaches writing code in a more relevant, less intimidating way. Full-color and packed with instructional graphics and photos, his books have gained a loyal following by illustrating programming in a way both instructive for newcomers and invaluable for seasoned coders.
+
+By discussing JavaScript and jQuery in a single text, Duckett ensures you will quickly be writing your own working scripts. Yet the book doesn\'t assume you have experience in either JavaScript or jQuery. By making use of popular jQuery plugins, Duckett illustrates techniques that would require pages upon pages of detailed explanation if you were being taught to create the plugins yourself. This durable and attractive hardcover edition is a book you will have open on your desk as a reference for years to come.
+
+A timeless and lasting version of a classic "Duckett" book in a hardbound, dust-jacketed edition
+Completely accessible to those who feel intimidated by the subject matter and relevant to all front-end designers and developers who need to understand JavaScript
+Discusses applying responsive design techniques, leveraging APIs to save you time and work in coding, and identifying when to use CSS transforms over pure JavaScript
+Beautiful 4-color illustrations and examples make this a terrific academic resource for those of all experience levels
+JavaScript & jQuery clearly explains the jargon of programming, addressing the vocabulary without making it a prerequisite for readers. Duckett speaks directly to readers, making this an invaluable resource.
+
+This book is also available as a set, Web Design with HTML, CSS, JavaScript and jQuery Set 978119038634 along with HTML and CSS Design and Build Websites 9781118871645.
+
+', image_url: "http://books.google.com/books/content?id=_uTRAwAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE70y0enZb81tPtxSchMEN-WO95RIWbhIqIKzG77UySK4QUMq1BH5HVHsu085pcrMAOIjE4B5ZcJoodTGwo-QmhCKIEf2LOXznvr-L7ESUDfj2YTYL4er_zCLXRuXcZJWuQD9cxvA&source=gbs_api", year: "2014"},{title: "Eloquent JavaScript, 2nd Ed.", author: "Marijn Haverbeke", description: '
+JavaScript lies at the heart of almost every modern web application, from social apps to the newest browser-based games. Though simple for beginners to pick up and play with, JavaScript is a flexible, complex language that you can use to build full-scale applications.
+
+Eloquent JavaScript, 2nd Edition dives deep into the JavaScript language to show you how to write beautiful, effective code. Author Marijn Haverbeke immerses you in example code from the start, while exercises and full-chapter projects give you hands-on experience with writing your own programs. As you build projects such as an artificial life simulation, a simple programming language, and a paint program, you’ll learn:
+
+The essential elements of programming, including syntax, control, and dataHow to organize and clarify your code with object-oriented and functional programming techniquesHow to script the browser and make basic web applicationsHow to use the DOM effectively to interact with browsersHow to harness Node.js to build servers and utilities
+This edition is thoroughly revised and modernized to reflect the current state of Java­Script and web browsers, with brand-new material, such as a chapter on code performance in Java­Script, and expanded coverage of recursion and closures. All source code is available online in an inter­active sandbox, where you can edit the code, run it, and see its output instantly.
+
+Isn’t it time you became fluent in the language of the Web?
+
+', image_url: "http://books.google.com/books/content?id=mDzDBQAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE72Dq3OoJAC404rjWsfT_YPdmDFJ4t5bAiLay2u0Gh_MtYkLz0-vEtvwVEeCOfuPWOWMQTDy8vgRo25CUdoTcAPxjAaOQPpvCAznmAuE4hYloeXdLy-wBqTwYJuZDdIZY2szWFtj&source=gbs_api", year: "2014"},{title: "JavaScript: The Good Parts", author: "Douglas Crockford", description: '
+Most programming languages contain good and bad parts, but JavaScript has more than its share of the bad, having been developed and released in a hurry before it could be refined. This authoritative book scrapes away these bad features to reveal a subset of JavaScript that\'s more reliable, readable, and maintainable than the language as a whole—a subset you can use to create truly extensible and efficient code.
+
+Considered the JavaScript expert by many people in the development community, author Douglas Crockford identifies the abundance of good ideas that make JavaScript an outstanding object-oriented programming language-ideas such as functions, loose typing, dynamic objects, and an expressive object literal notation. Unfortunately, these good ideas are mixed in with bad and downright awful ideas, like a programming model based on global variables.
+
+When Java applets failed, JavaScript became the language of the Web by default, making its popularity almost completely independent of its qualities as a programming language. In JavaScript: The Good Parts, Crockford finally digs through the steaming pile of good intentions and blunders to give you a detailed look at all the genuinely elegant parts of JavaScript, including:
+
+Syntax
+Objects
+Functions
+Inheritance
+Arrays
+Regular expressions
+Methods
+Style
+Beautiful features
+The real beauty? As you move ahead with the subset of JavaScript that this book presents, you\'ll also sidestep the need to unlearn all the bad parts. Of course, if you want to find out more about the bad parts and how to use them badly, simply consult any other JavaScript book.
+
+With JavaScript: The Good Parts, you\'ll discover a beautiful, elegant, lightweight and highly expressive language that lets you create effective code, whether you\'re managing object libraries or just trying to get Ajax to run fast. If you develop sites or applications for the Web, this book is an absolute must.
+
+', image_url: "http://books.google.com/books/content?id=PXa2bby0oQ0C&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE71plkGqpKq95jw1d9wpFPr5GJDQSuV_jYBuhBNFr90BYFOv0xBvRDIBI798zVcpti_z93qdtftclemDfpYl1I1n0uF-AwrQ0y7ABpI-NP8RyAO0KaPFVqXfvAbpwvvTD0HtvXKw&source=gbs_api", year: "2008"},{title: "JavaScript", author: "David Flanagan", description: '
+JavaScript is a powerful, object-based scripting language; JavaScript programs can be embedded directly in HTML web pages. When combined with the Document Object Model (DOM) defined by a web browser, JavaScript allows you to create Dynamic HTML content and interactive client-side web applications. JavaScript syntax is based on the popular programming languages C, C++, and Java, which makes it familiar and easy to learn for experienced programmers. At the same time, JavaScript is an interpreted scripting language, providing a flexible, forgiving programming environment in which new programmers can learn.
+
+JavaScript: The Definitive Guideprovides a thorough description of the core JavaScript language and both the legacy and standard DOMs implemented in web browsers. The book includes sophisticated examples that show you how to handle common tasks, like validating form data, working with cookies, and creating portable DHTML animations. The book also contains detailed reference sections that cover the core JavaScript API, the legacy client-side API, and the W3C standard DOM API, documenting every JavaScript object, method, property, constructor, constant, function, and event handler in those APIs.
+
+This fourth edition of the bestselling JavaScript book has been carefully updated to cover JavaScript 1.5 (ECMAScript version 3). The book also provides complete coverage of the W3C DOM standard (Level 1 and Level 2), while retaining material on the legacy Level 0 DOM for backward compatibility.
+
+JavaScript: The Definitive Guideis a complete programmer\'s guide and reference manual for JavaScript. It is particularly useful for developers working with the latest standards-compliant web browsers, like Internet Explorer 6, Netscape 6, and Mozilla. HTML authors can learn how to use JavaScript to build dynamic web pages. Experienced programmers can quickly find the information they need to start writing sophisticated JavaScript programs. This book is an indispensable reference for all JavaScript programmers, regardless of experience level.
+
+', image_url: "http://books.google.com/books/content?id=vJGlu9t9LNYC&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE72yc7dDly8q6K0zNRXZKObHov0qpcrQqgltoh0yif913qju4jS7Y9xed6HiebGSt7bBZ_oriOXbr2-Sbkxb9WY2rK4uky1kmcQGoUM01Awjcwr45_XPaTGFUT6w0rRUgv4hSvXF&source=gbs_api", year: "2002"},{title: "Learning JavaScript Design Patterns", author: "Addy Osmani", description: '
+With Learning JavaScript Design Patterns, you’ll learn how to write beautiful, structured, and maintainable JavaScript by applying classical and modern design patterns to the language. If you want to keep your code efficient, more manageable, and up-to-date with the latest best practices, this book is for you.
+
+Explore many popular design patterns, including Modules, Observers, Facades, and Mediators. Learn how modern architectural patterns—such as MVC, MVP, and MVVM—are useful from the perspective of a modern web application developer. This book also walks experienced JavaScript developers through modern module formats, how to namespace code effectively, and other essential topics.
+
+Learn the structure of design patterns and how they are written
+Understand different pattern categories, including creational, structural, and behavioral
+Walk through more than 20 classical and modern design patterns in JavaScript
+Use several options for writing modular code—including the Module pattern, Asyncronous Module Definition (AMD), and CommonJS
+Discover design patterns implemented in the jQuery library
+Learn popular design patterns for writing maintainable jQuery plug-ins
+"This book should be in every JavaScript developer’s hands. It’s the go-to book on JavaScript patterns that will be read and referenced many times in the future."—Andrée Hansson, Lead Front-End Developer, presis!
+
+', image_url: "http://books.google.com/books/content?id=L46fX62D5qYC&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE70gx3tkFEJWCWsA80NOphdJSOm5deHsEKKQckgT2MylLIoLCVUx9xz8nB5fiCqHEwunw8GgsBEABLkoefiP4hlGa3XG2sLhITaa9vHVR-tF5cpoPm9LX-sjYmyss1c3drY5Jlwj&source=gbs_api", year: "2012"}
+  ]);
 #game of thrones
 Book.create([{title: "The Ice Dragon", author: "George R. R. Martin", description: '
 The Ice Dragon is an enchanting tale of courage and sacrifice for young readers and adults by the wildly popular author of the #1 New York Times bestselling Song of Ice and Fire series, George R.R. Martin. Lavish illustrations by acclaimed artist Luis Royo enrich this captivating and heartwarming story of a young girl and her dragon.
@@ -211,24 +282,7 @@ Wild Cards contributor Caroline Spector delves into the books’ controversial d
 
 Plus much more, from military science fiction writer Myke Cole on the way Post-Traumatic Stress Disorder shapes many of the leading characters to author and television writer Ned Vizzini on the biases against genre fiction that color critical reactions to the series.
 
-Contributors:
-
-R.A. Salvatore (foreword)
-Daniel Abraham
-Linda Antonsson
-Myke Cole
-Elio M. García, Jr.
-Brent Hartinger
-John Jos. Miller
-Alyssa Rosenberg
-Jesse Scoble
-Caroline Spector
-Matt Staggs
-Susan Vaught
-Ned Vizzini
-Gary Westfahl
-Adam Whitehead
-Andrew Zimmerman Jones', image_url: "null", year: "2012"},{title: "The World of Ice & Fire", author: "George R. R. Martin", description: 'NEW YORK TIMES BESTSELLER • THE NEVER-BEFORE-SEEN HISTORY OF WESTEROS AND THE LANDS BEYOND • WITH HUNDREDS OF PAGES OF ALL-NEW MATERIAL FROM GEORGE R. R. MARTIN
+', image_url: "null", year: "2012"},{title: "The World of Ice & Fire", author: "George R. R. Martin", description: 'NEW YORK TIMES BESTSELLER • THE NEVER-BEFORE-SEEN HISTORY OF WESTEROS AND THE LANDS BEYOND • WITH HUNDREDS OF PAGES OF ALL-NEW MATERIAL FROM GEORGE R. R. MARTIN
 
 If the past is prologue, then George R. R. Martin’s masterwork—the most inventive and entertaining fantasy saga of our time—warrants one hell of an introduction. At long last, it has arrived with The World of Ice & Fire.
 

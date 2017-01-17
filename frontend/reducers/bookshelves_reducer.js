@@ -3,24 +3,27 @@ import { RECEIVE_BOOKSHELVES, RECEIVE_BOOKSHELF,
 import merge from 'lodash/merge';
 import { assign } from 'lodash';
 
-const _defaultState = {};
+const _defaultState = {
+  bookshelves: {},
+  errors: []
+};
 
 const BookshelvesReducer = (state=_defaultState, action) => {
-  Object.freeze(state);
+  let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_BOOKSHELVES:
-      return action.shelves;
+      newState.bookshelves = action.shelves;
+      return newState;
 
     case REMOVE_BOOKSHELVES:
       return _defaultState;
 
     case RECEIVE_BOOKSHELF:
-      let updatedState = assign({}, state, {[action.shelf.id]: action.shelf });
-      return updatedState;
+      newState.bookshelves = merge({}, newState.bookshelves, {[action.shelf.id]: action.shelf });
+      return newState;
 
     case REMOVE_BOOKSHELF:
-      let newState = merge({}, state);
-      delete newState[action.id];
+      delete newState.bookshelves[action.id];
       return newState;
 
     default:

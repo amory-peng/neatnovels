@@ -14,7 +14,6 @@ class AddBookFormItem extends React.Component{
   }
 
   handleClick() {
-    console.log("click");
     if (this.state.sym !== "💤" ) {
       this.setState({sym: "💤" }, () =>
       this.props.handleClick(this.props.shelf.id, this.props.bookId));

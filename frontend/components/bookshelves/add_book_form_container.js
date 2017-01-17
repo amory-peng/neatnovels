@@ -5,7 +5,7 @@ import { requestBookshelves,
          removeBookFromShelf } from '../../actions/bookshelf_actions';
 
 const mapStateToProps = ({ bookshelves }, ownProps) => ({
-  bookshelves,
+  bookshelves: bookshelves.bookshelves,
   bookId: ownProps.bookId
 });
 

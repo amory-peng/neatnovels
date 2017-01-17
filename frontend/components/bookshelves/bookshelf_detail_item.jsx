@@ -18,7 +18,7 @@ class BookshelfDetailItem extends React.Component {
         <img onClick={this.handleClick} src={this.props.book.image_url} />
         <h3>
           <Link to={`/books/${this.props.book.id}`} className="link">
-            {this.props.book.title}</Link> by {this.props.book.author}
+            {this.props.book.title}</Link> <br /> by {this.props.book.author}
         </h3>
       </div>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, hashHistory, withRouter } from 'react-router';
+import SearchBarContainer from './search_bar_container';
 
 class Greeting extends React.Component {
   constructor(props) {
@@ -39,6 +40,7 @@ class Greeting extends React.Component {
     } else {
       text = (
         <div id="greeting-container">
+          <SearchBarContainer location={location}/>
           <h2>Welcome, {this.props.currentUser.username}.</h2>
           <button className="button" onClick={this.goTo('/bookshelves')}>Shelves</button>
           <button className="button" onClick={this.goTo('/books')}>Books</button>

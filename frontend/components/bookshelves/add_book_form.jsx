@@ -13,9 +13,6 @@ class AddBookForm extends React.Component {
     this.props.requestBookshelves();
   }
 
-  componentWillReceiveProps() {
-    console.log("hit here");
-  }
   bookshelfList() {
     let bookshelfList;
     if (this.props.bookshelves) {

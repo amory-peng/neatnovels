@@ -5,13 +5,13 @@ import { requestBookshelves,
          removeBookFromShelves } from '../../actions/bookshelf_actions';
 
 const mapStateToProps = ({ bookshelves }) => ({
-  bookshelves
+  bookshelves: bookshelves.bookshelves
 });
 
 const mapDispatchToProps = dispatch => ({
   requestBookshelves: () => dispatch(requestBookshelves()),
   removeBookshelves: () => dispatch(removeBookshelves()),
-  removeBookFromShelves: id => dispatch(removeBookFromShelves(id))
+  removeBookFromShelves: id => dispatch(removeBookFromShelves(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookshelfIndex);

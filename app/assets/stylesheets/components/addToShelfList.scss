@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 200px;
+  color: $red;
 }
 
 .add-to-shelf-container > ul {
@@ -29,7 +30,6 @@
   font-size: 14px;
   min-width: 50px;
   max-width: 50px;
-  color: white;
 }
 
 .abf-item {

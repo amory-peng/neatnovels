@@ -4,11 +4,16 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:create]
+
     resource :session, only: [:create, :destroy]
+
+    get "books/search/:query", to: "books#search"
+
     resources :books, only: [:index, :show] do
       delete "bookshelves", to: "shelvings#destroy_all"
       resources :comments, only: [:create, :index]
     end
+
     resources :bookshelves, only: [:index, :show, :create, :update, :destroy] do
       post "books/:book_id", to: "shelvings#create"
       delete "books/:book_id", to: "shelvings#destroy"

@@ -13,6 +13,11 @@ class Api::BooksController < ApplicationController
     end
   end
 
+  def search
+    @books = Book.all.where("upper(title) LIKE upper(?)", "%#{params[:query]}%").limit(12)
+    render :search
+  end
+
   def book_params
     params.require(:book)
     .permit(:title, :author, :year, :description, :image_url)

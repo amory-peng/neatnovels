@@ -10,8 +10,10 @@ class BooksIndex extends React.Component {
     this.handleScroll = this.handleScroll.bind(this);
   }
 
-  componentDidMount() {
-    this.props.requestBooks(0);
+  componentWillMount() {
+    if (this.props.books.length === 0) {
+      this.props.requestBooks(0);
+    }
   }
 
   componentWillReceiveProps(newProps) {
@@ -51,17 +53,18 @@ class BooksIndex extends React.Component {
         <li key={idx} onClick={this.handleClick(book.id)}><BooksIndexItem book={book} /></li>
       ));
     }
-
     let loadDiv;
     if (this.state.loading) {
       loadDiv = <div className="loading">Loading...</div>;
     }
     return (
-      <div className="books-main-container">
-        { loadDiv }
-        <ul className="books-index-container">
-          { bookList }
-        </ul>
+      <div className = "wrapper">
+        <div className="books-main-container">
+          { loadDiv }
+          <ul className="books-index-container">
+            { bookList }
+          </ul>
+        </div>
       </div>
     );
   }
