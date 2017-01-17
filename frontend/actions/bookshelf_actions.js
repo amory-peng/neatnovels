@@ -67,7 +67,7 @@ export const addBookToShelf = (bookshelfId, bookId) => dispatch => (
 
 export const removeBookFromShelf = (bookshelfId, bookId) => dispatch => (
   ShelvingAPIUtil.deleteShelving(bookshelfId, bookId)
-    .then(() => dispatch(requestBookshelf(bookshelfId)))
+    .then(() => dispatch(requestBookshelves()))
     .then(() => dispatch(requestCurrentBookshelf(bookshelfId)))
 );
 

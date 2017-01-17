@@ -14,11 +14,9 @@
 
 .add-to-shelf-container > ul > li {
   color: $red;
-  padding: 15px;
   width: 100%;
   background: white;
   cursor: pointer;
-  height: 25px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -34,6 +32,11 @@
 
 .abf-item {
   width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  height: 25px;
 }
 
 .add-to-shelf-container > ul > li:hover {

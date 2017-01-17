@@ -19,7 +19,7 @@ const BookshelvesReducer = (state=_defaultState, action) => {
       return _defaultState;
 
     case RECEIVE_BOOKSHELF:
-      newState.bookshelves = merge({}, newState.bookshelves, {[action.shelf.id]: action.shelf });
+      newState.bookshelves = merge(newState.bookshelves, {[action.shelf.id]: action.shelf });
       return newState;
 
     case REMOVE_BOOKSHELF:
