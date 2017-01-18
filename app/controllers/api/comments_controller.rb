@@ -14,7 +14,8 @@ class Api::CommentsController < ApplicationController
 
   def index
     @comments = Comment.includes(:user).where(book_id: params[:book_id])
-                       .order(created_at: :desc)
+                       .order(created_at: :desc).limit(5)
+
   end
 
   def comment_params

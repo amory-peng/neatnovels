@@ -54,16 +54,13 @@ class SessionForm extends React.Component {
     if (this.props.formType === "login") {
       text = <h3>
         Not a user?&nbsp;
-        <Link to="/signup" className="link">Sign up</Link>
-        &nbsp;or&nbsp;
-        <span className="link" onClick={this.handleDemo}>demo</span>.
+        <Link to="/signup" className="link">Sign up!</Link>
       </h3>;
       buttonText="Login";
     } else {
-      text = <h3>Already a user? <Link to="/login" className="link">Sign in</Link>
-        &nbsp;or&nbsp;
-        <span className="link" onClick={this.handleDemo}>demo</span>.
-        </h3>;
+      text = <h3>Already a user?&nbsp;
+        <Link to="/login" className="link">Sign in!</Link>
+      </h3>;
       buttonText="Sign up";
     }
 
@@ -87,8 +84,11 @@ class SessionForm extends React.Component {
               onChange={this.update('password')}
               placeholder="Password"
               value={this.state.password} />
+            <div className="session-buttons">
 
-            <input type="submit" className="button" value={buttonText}/>
+              <input type="submit" className="button" value={buttonText}/>
+              <div className="button" onClick={this.handleDemo}>Demo</div>
+            </div>
             { text }
           </form>
           <ul className="session-errors">{errorText}</ul>

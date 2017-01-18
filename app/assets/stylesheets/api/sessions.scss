@@ -78,3 +78,17 @@
   padding-top: 10px;
   font-size: 12px;
 }
+
+.session-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.session-buttons > .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}

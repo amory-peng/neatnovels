@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createComment } from '../../actions/comment_actions';
+import { createComment, clearErrors } from '../../actions/comment_actions';
 import CommentForm from './comment_form';
 
 const mapStateToProps = ({ comments }) => ({
@@ -7,7 +7,8 @@ const mapStateToProps = ({ comments }) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  createComment: (comment) => dispatch(createComment(ownProps.bookId, comment))
+  createComment: (comment) => dispatch(createComment(ownProps.bookId, comment)),
+  clearErrors: () => dispatch(clearErrors())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CommentForm);

@@ -9,6 +9,8 @@ export const REMOVE_BOOKSHELVES = 'REMOVE_BOOKSHELVES';
 export const RECEIVE_CURRENT_BOOKSHELF = 'RECEIVE_CURRENT_BOOKSHELF';
 export const REMOVE_CURRENT_BOOKSHELF = 'REMOVE_CURRENT_BOOKSHELF';
 
+export const RECEIVE_BOOKSHELF_ERRORS = 'RECEIVE_BOOKSHELF_ERRORS';
+export const CLEAR_BOOKSHELF_ERRORS = 'CLEAR_BOOKSHELF_ERRORS';
 //POJOs
 export const receiveBookshelves = shelves => ({
   type: RECEIVE_BOOKSHELVES,
@@ -38,8 +40,19 @@ export const removeBookshelves = () => ({
   type: REMOVE_BOOKSHELVES
 });
 
+export const receiveBookshelfErrors = errors => ({
+  type: RECEIVE_BOOKSHELF_ERRORS,
+  errors
+});
+
+export const clearBookshelfErrors = () => ({
+    type: CLEAR_BOOKSHELF_ERRORS
+});
+
 export const createBookshelf = shelf => dispatch => (
-  BookshelfAPIUtil.createBookshelf(shelf).then(res => dispatch(receiveBookshelf(res)))
+  BookshelfAPIUtil.createBookshelf(shelf)
+  .then(res => dispatch(receiveBookshelf(res)))
+  .fail(err => dispatch(receiveBookshelfErrors(err.responseJSON)))
 );
 
 export const requestCurrentBookshelf = id => dispatch => (

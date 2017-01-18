@@ -25,6 +25,13 @@ class BookDetail extends React.Component {
 
   render() {
     let text;
+    //check for current user
+    let addBookForm;
+    let commentForm;
+    if (this.props.currentUser) {
+      addBookForm = <AddBookForm bookId={this.props.bookId} />;
+      commentForm = <CommentForm bookId = {this.props.bookId} />;
+    }
     let img = <img src="../../assets/book-placeholder.png" />;
     if (this.props.currentBook.image_url !== "null") {
       img = <img src={this.props.currentBook.image_url} />;
@@ -51,7 +58,7 @@ class BookDetail extends React.Component {
               </p>
             </div>
             <div className="book-detail-form-container">
-              <AddBookForm bookId={this.props.bookId} />
+              { addBookForm }
               <Link to="/books" className="button">Back to Index</Link>
             </div>
 
@@ -59,7 +66,7 @@ class BookDetail extends React.Component {
         </div>
 
         <div className="comment-container">
-          <CommentForm bookId = {this.props.bookId} />
+          { commentForm }
           <CommentsIndex bookId={this.props.bookId} />
         </div>
       </div>

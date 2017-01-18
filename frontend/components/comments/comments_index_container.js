@@ -3,7 +3,7 @@ import { requestComments, clearComments } from '../../actions/comment_actions';
 import CommentsIndex from './comments_index';
 
 const mapStateToProps = ({ comments }, ownProps) => ({
-  comments: comments.comments,
+  comments: comments.comments.slice(0,5),
   bookId: ownProps.bookId
 });
 

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
     resource :session, only: [:create, :destroy]
 
-    get "books/search/:query", to: "books#search"
+    get "search/books/:query", to: "books#search"
 
     resources :books, only: [:index, :show] do
       delete "bookshelves", to: "shelvings#destroy_all"
@@ -18,8 +18,5 @@ Rails.application.routes.draw do
       post "books/:book_id", to: "shelvings#create"
       delete "books/:book_id", to: "shelvings#destroy"
     end
-
-    # post "books/:book_id/bookshelves/:bookshelves_id", to: "api/shelvings#create"
-    # delete "books/:book_id/bookshelves/:bookshelves_id" to:"api/shelvings#destroy"
   end
 end

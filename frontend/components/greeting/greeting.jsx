@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, hashHistory, withRouter } from 'react-router';
-import SearchBarContainer from './search_bar_container';
+import SearchBarContainer from '../search/search_bar_container';
 
 class Greeting extends React.Component {
   constructor(props) {
@@ -22,16 +22,9 @@ class Greeting extends React.Component {
 
   render () {
     let text;
-    let goToText;
-    if (this.props.location.pathname === '/bookshelves') {
-      goToText = 'Books';
-    } else {
-      goToText = "Shelves";
-    }
-
     if (!this.props.currentUser) {
       text = (
-        <div id="greeting-container">
+        <div className="logged-in">
           <Link to="/login" className="button">Sign in</Link>
           <Link to="/signup" className="button">Sign up</Link>
         </div>
@@ -39,8 +32,7 @@ class Greeting extends React.Component {
 
     } else {
       text = (
-        <div id="greeting-container">
-          <SearchBarContainer location={location}/>
+        <div className="logged-in">
           <h2>Welcome, {this.props.currentUser.username}.</h2>
           <button className="button" onClick={this.goTo('/bookshelves')}>Shelves</button>
           <button className="button" onClick={this.goTo('/books')}>Books</button>
@@ -50,7 +42,7 @@ class Greeting extends React.Component {
     }
 
     return(
-      <div>
+      <div id="greeting-container">
         { text }
       </div>
     );

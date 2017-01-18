@@ -14,7 +14,10 @@ class Api::BooksController < ApplicationController
   end
 
   def search
-    @books = Book.all.where("upper(title) LIKE upper(?)", "%#{params[:query]}%").limit(11)
+    @books = Book.all
+      .where("upper(title) LIKE upper(?) or upper(author) LIKE upper(?)", "%#{params[:query]}%", "%#{params[:query]}%")
+      .order('AUTHOR ASC')
+      .limit(16)
     render :search
   end
 

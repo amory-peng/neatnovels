@@ -17,17 +17,32 @@ class AddBookshelfForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let newShelf = merge({}, this.state);
-    this.setState({ name: "" }, () => this.props.createBookshelf(newShelf));
+    this.setState({ name: "" }, () => {
+      this.props.createBookshelf(newShelf);
+      this.props.clearBookshelfErrors();
+    });
   }
 
   render() {
+    let errorList;
+    if (this.props.errors) {
+      errorList = this.props.errors.map((error, idx) => (
+        <li key={idx}>{error}</li>
+      ));
+    }
     return(
       <form className="add-form-container" onSubmit={this.handleSubmit}>
-        <input type="text" onChange={this.handleChange} placeholder="Add a bookshelf!"
-          value={this.state.name}/>
-        <button className="button">Add shelf</button>
+        <input type="text"
+               onChange={this.handleChange}
+               placeholder="Add a bookshelf!"
+               value={this.state.name}/>
 
+        <button className="button">Add shelf</button>
+        <ul>
+          {errorList}
+        </ul>
       </form>
+
     );
   }
 }

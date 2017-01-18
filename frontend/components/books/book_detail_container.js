@@ -2,10 +2,11 @@ import { connect } from 'react-redux';
 import { requestBook, removeCurrentBook } from '../../actions/book_actions';
 import BookDetail from './book_detail';
 
-const mapStateToProps = ({ currentBook }, ownProps) => {
+const mapStateToProps = ({ currentBook, session }, ownProps) => {
   return ({
   currentBook,
-  bookId: ownProps.params.bookId
+  bookId: ownProps.params.bookId,
+  currentUser: session.currentUser
 });
 };
 

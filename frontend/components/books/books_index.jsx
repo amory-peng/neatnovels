@@ -52,12 +52,8 @@ class BooksIndex extends React.Component {
       bookList = this.props.books.map( (book,idx) => (
         <li key={idx} onClick={this.handleClick(book.id)}><BooksIndexItem book={book} /></li>
       ));
-    } else {
-      if (!this.state.loading) {
-        bookList = <h1>Nothing found!</h1>;
-        document.removeEventListener('scroll', this.handleScroll);
-      }
     }
+    
     let loadDiv;
     if (this.state.loading) {
       loadDiv = <div className="loading">Loading...</div>;

@@ -9,6 +9,10 @@ class CommentForm extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   handleChange(e) {
     this.setState({body: e.target.value});
   }

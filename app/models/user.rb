@@ -13,11 +13,12 @@
 class User < ApplicationRecord
   validates :username, :password_digest, :session_token, presence: true, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
+  validates :username, length: {maximum: 40}
   after_initialize :ensure_session_token
 
   has_many :bookshelves, dependent: :destroy
   has_many :comments, dependent: :destroy
-  
+
   has_many :shelvings, through: :bookshelves
   has_many :books, through: :bookshelves
   attr_reader :password

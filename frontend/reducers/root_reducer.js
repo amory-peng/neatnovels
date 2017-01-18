@@ -5,6 +5,7 @@ import bookDetailReducer from './book_detail_reducer';
 import bookshelvesReducer from './bookshelves_reducer';
 import bookshelfDetailReducer from './bookshelf_detail_reducer';
 import commentsReducer from './comments_reducer';
+import searchReducer from './search_reducer';
 
 export default combineReducers({
   session: sessionReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
   currentBook: bookDetailReducer,
   bookshelves: bookshelvesReducer,
   currentBookshelf: bookshelfDetailReducer,
-  comments: commentsReducer
+  comments: commentsReducer,
+  search: searchReducer
 });
