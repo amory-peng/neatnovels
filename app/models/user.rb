@@ -23,6 +23,14 @@ class User < ApplicationRecord
   has_many :books, through: :bookshelves
   attr_reader :password
 
+  def self.generate_user
+    demo_user = User.new(username: "Guest#{rand(9999999)}", password: 'password')
+    until demo_user.save!
+      demo_user = User.new(username: "Guest#{rand(9999999)}", password: 'password')
+    end
+    return demo_user
+  end
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     return nil if user.nil?

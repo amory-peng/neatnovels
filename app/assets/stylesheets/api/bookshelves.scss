@@ -61,8 +61,6 @@
   align-items: center;
 }
 
-.bookshelf-detail-container > ul > li > .button {
-}
 .bookshelf-detail-item-container {
   border-bottom: 1px solid $light-grey;
   padding: 20px;
@@ -82,10 +80,6 @@
   padding: 0 20px;
 }
 
-.bookshelf-detail-item-container > .button {
-
-}
-
 .bookshelf-detail-item-container span {
 
 }
@@ -96,14 +90,9 @@
   margin-top: 50px;
 }
 
-.add-form-container {
-
-}
-
 .add-form-container > input {
   height: 22px;
   outline: none;
-
 }
 
 .add-form-container > .button {

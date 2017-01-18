@@ -36,3 +36,7 @@ export const signup = user => dispatch => {
   .then(res => dispatch(receiveCurrentUser(res)))
   .fail(err => dispatch(receiveErrors(err.responseJSON)));
 };
+
+export const demo = () => dispatch => {
+  return SessionApiUtil.demo().then(res => dispatch(receiveCurrentUser(res)));
+};

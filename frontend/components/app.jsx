@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import Header from './greeting/header';
+import Footer from './greeting/footer';
 
 const App = (props) => (
   <div>
@@ -8,7 +9,7 @@ const App = (props) => (
     <div className="body">
       { props.children }
     </div>
-
+    <Footer location={props.location} />
   </div>
 );
 

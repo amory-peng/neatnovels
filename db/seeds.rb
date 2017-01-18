@@ -6,6 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # harry potter
+user_array = [];
+50.times do
+  new_user = {
+    username: Faker::Superhero.name,
+    password: 'password'
+  }
+  user_array << new_user
+end
+User.create(user_array)
 
 User.create(username: 'jimbo', password: 'password');
 Bookshelf.create(user_id: 1, name: "read", protect: true)
@@ -13,6 +22,8 @@ Bookshelf.create(user_id: 1, name: "currently reading", protect: true)
 Bookshelf.create(user_id: 1, name: "to read", protect: true)
 
 Shelving.create(bookshelf_id: 1, book_id: 1)
+
+
 
 # bookArray = [];
 # count = 0
@@ -29,6 +40,40 @@ Shelving.create(bookshelf_id: 1, book_id: 1)
 # end
 #
 # Book.create(bookArray)
+
+#fifty shades
+Book.create([{title: "Fifty Shades of Grey", author: "James", description: '
+ MORE THAN 100 MILLION COPIES SOLD WORLD WIDE.
+
+When literature student Anastasia Steele interviews successful entrepreneur Christian Grey, she finds him very attractive and deeply intimidating. Convinced that their meeting went badly, she tries to put him out of her mind – until he turns up at the store where she works part-time, and invites her out.
+
+Unworldly and innocent, Ana is shocked to find she wants this man. And, when he warns her to keep her distance, it only makes her want him more.
+
+As they embark on a passionate love affair, Ana discovers more about her own desires, as well as the dark secrets Christian keeps hidden away from public view ...
+
+Motion Picture Artwork © 2014 Universal Studios. All Rights Reserved.
+
+', image_url: "http://books.google.com/books/content?id=i396BwAAQBAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE726LYhsQLBrl9yAwQ9SrFGVTHwTnZsjOadNLlmFE3ELTFityKGkXqCkZC6oBPzqzxsjBhU4wlWyl-1_ojdqu-pTHnOgV0nL3aXqosc4NL6KuB3__r0L0w7XhxJDcF3ZarfijVfI&source=gbs_api", year: "2015"},{title: "Fifty Shades Darker", author: "E. L. James", description: 'Daunted by the dark secrets of the tormented young entrepreneur Christian Grey, Ana Steele has broken off their relationship to start a new career with a US publishing house. But desire for Grey still dominates her every waking thought, and when he proposes a new arrangement, she cannot resist.', image_url: "http://books.google.com/books/content?id=H4sKLwEACAAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE72EiJ8wITXL4grvRykud3tvJKHPhEkA9gCTc7TkJnSkOn7kLqbWPPIPWnNwPuu7ksO3y6hiGD3G3qEqEqgJ0R8dr0ykSnNqDEl5pjFq5Qbri-IU58itQXfKsCeblouMgJNA-9cy&source=gbs_api", year: "2012"},{title: "Fifty Shades Freed", author: "E. L. James", description: '
+MORE THAN 100 MILLION COPIES SOLD WORLDWIDE
+FIFTY SHADES OF GREY IS NOW A MAJOR MOTION PICTURE
+
+When unworldly student Anastasia Steele first encountered the driven and dazzling young entrepreneur Christian Grey it sparked a sensual affair that changed both of their lives irrevocably. Shocked, intrigued, and, ultimately, repelled by Christian\'s singular erotic tastes, Ana demands a deeper commitment. Determined to keep her, Christian agrees.
+
+Now, Ana and Christian have it all--love, passion, intimacy, wealth, and a world of possibilities for their future. But Ana knows that loving her Fifty Shades will not be easy, and that being together will pose challenges that neither of them would anticipate. Ana must somehow learn to share Christian\'s opulent lifestyle without sacrificing her own identity. And Christian must overcome his compulsion to control as he wrestles with the demons of a tormented past.
+
+Just when it seems that their strength together will eclipse any obstacle, misfortune, malice, and fate conspire to make Ana\'s deepest fears turn to reality.
+
+This book is intended for mature audiences.
+
+', image_url: "http://books.google.com/books/content?id=bfZrvjLVJgIC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE701tDg3hEdy8RkrPP9rrbFoTD-auBx7GF_SjlXtEgoyLbzrOtrW2YiVL7ZeqJwk8RDd6pNVoFatyiH84ZewTHg_I2jX60xOjlQRNBS0ihoFVtI1ybKEdocZTgDDHJi3eg-FrcBD&source=gbs_api", year: "2012"}])
+#some cs stuff
+Book.create([{title: "Cracking the Coding Interview", author: "Gayle Laakmann McDowell", description: 'Now in the 5th edition, Cracking the Coding Interview gives you the interview preparation you need to get the top software developer jobs. This book provides:
+150 Programming Interview Questions and Solutions: From binary trees to binary search, this list of 150 questions includes the most common and most useful questions in data structures, algorithms, and knowledge based questions.
+5 Algorithm Approaches: Stop being blind-sided by tough algorithm questions, and learn these five approaches to tackle the trickiest problems.
+Behind the Scenes of the interview processes at Google, Amazon, Microsoft, Facebook, Yahoo, and Apple: Learn what really goes on during your interview day and how decisions get made.
+Ten Mistakes Candidates Make -- And How to Avoid Them: Don\'t lose your dream job by making these common mistakes. Learn what many candidates do wrong, and how to avoid these issues.
+Steps to Prepare for Behavioral and Technical Questions: Stop meandering through an endless set of questions, while missing some of the most important preparation techniques. Follow these steps to more thoroughly prepare in less time.
+', image_url: "http://books.google.com/books/content?id=anhAXwAACAAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE73rZUlbpsyePV9QpT2rzR8Y0t_DS8Hl8UE2PdMLDEF7kIhKizdiUC2873ks2c7yyxnk3LB7K-H7ohBIX3dYTSs1_-5UFZ6k3ljCHb0A7PO-SnHulsx6b9vxjlIyu_pSY4bI4_Wg&source=gbs_api", year: "2011"},{title: "Data Structures and Algorithms", author: "Shi Kuo Chang", description: 'This is an excellent, up-to-date and easy-to-use text on data structures and algorithms that is intended for undergraduates in computer science and information science. The thirteen chapters, written by an international group of experienced teachers, cover the fundamental concepts of algorithms and most of the important data structures as well as the concept of interface design. The book contains many examples and diagrams. Whenever appropriate, program codes are included to facilitate learning.This book is supported by an international group of authors who are experts on data structures and algorithms, through its website at http: //www.cs.pitt.edu/jung/GrowingBook/, so that both teachers and students can benefit from their expertise', image_url: "http://books.google.com/books/content?id=1lCHYj5eV-EC&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE713sxDVvEWzkWlqwPD0oPn2kaVqaWagTa4x8EOQjeVMaPvV0VT2q-FQ-7k_Wyhgz1UEA5nYu-i0pfmg7xybdGeLhlAwr-6U1etY8skeF3afiS-gKUDELG-4v1B32JaSqEaYHGbP&source=gbs_api", year: "2003"}]);
 #magic school bus
 
 Book.create([{title: "The Magic School Bus and the Electric Field Trip", author: "Joanna Cole", description: 'To celebrate its 20th anniversary, Scholastic is re-releasing the ten original Magic School Bus titles in paperback. With updated scientific information, the bestselling science series ever is back!
@@ -803,3 +848,17 @@ Do secret conspiracies direct the future course of human political evolution? Ca
 
 Philosophers who are fans of Dune will trek through the desert of the Duniverse seeing answers to these and other questions.', image_url: "http://books.google.com/books/content?id=9QYJe3eEbu0C&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE73b6x6Cp-ptVKGHiX_3aoondSt2zHoZ_gah-ZH4cZg-4sbh_iaudFVX5Cu2vBkZqEi8ZZfRXhWhpRlAQvJV-HnCCQWZVstWCoT85Xmlg6NuCJ2mhPyAq_EZm7GnhWmZfd_A45ze&source=gbs_api", year: "2011"},{title: "Dune is a Four-letter Word", author: "Griselda Sprigg", description: '\'Dune is a four-letter word\', said Griselda Sprigg on the first day of her family\'s attempt to make the first motorised crossing of the forbidding Simpson desert. \'And so is bloody spinifex.\' Dune is a Four-letter Word tells the story of Griselda and Reg Sprigg\'s pioneering desert adventures - not only in the Simpson Desert but all over the vast Australian outback. Griselda\'s story is also the story of Arkaroola Sanctuary, how she, with her husband, Reg, turned a drought-stricken sheep station into the magnificent flora and fauna reserve and tourist mecca it is today. The late Rod Maclean was an author, journalist and television reporter and the late Griselda Sprigg was the first white woman to cross the Simpson Desert.', image_url: "http://books.google.com/books/content?id=pQF3QWxaQ3AC&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE70svJwL5vR-WzPfexAAK469uOrScmJYZ2js31ohAwVOqJuHSHPG5_1CCfqgw3-wv3_GWW6lWAu1kUCTEYyeovIyG4hLLPRnq7n8-0V7kpFS0R8tnknIITSmJZ-geO7N6LZsBB7t&source=gbs_api", year: "2001"},
 {title: "Heretics of Dune", author: "Frank Herbert", description: 'With more than ten million copies sold, Frank Herbert\'s magnificent Dune books stand among the major achievements of the human imagination. In this, the fifth and most spectacular Dune book of all, the planet Arrakis--now called Rakis--is becoming desert again. The Lost Ones are returning home from the far reaches of space. The great sandworms are dying. And the children of Dune\'s children awaken from empire as from a dream, wielding the new power of a heresy called love...', image_url: "http://books.google.com/books/content?id=0ZKAkX0W4A4C&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE73PR3P5CbgJK6KkvUMor0PUVMjZpAETXGBpYjxv2Brx-ZspTaeGlHIuE-ZE6351lSLHFUB7X3j6Dhs6ZrTj4L9c0HI7NxUt9IxUzjP-1KaixFUtE-7Jcja3u_TIMPzs6FxPqjw8&source=gbs_api", year: "1987"},{title: "Building a Dune Buggy - The Essential Manual", author: "Paul Shakespeare", description: 'There has been a huge resurgence of interest in Dune Buggies (Beach Buggies) - kit cars based on the chassis and running gear of fatally corroded VW Beetles. Here is the complete step-by-step practical guide to the equipment and building techniques needed to build a Buggy, as well as sound guidance on the choice of donor car and new components. With this manual in your workshop, you can build any VW-based Dune Buggy avoiding all the common pitfalls and money-sapping mistakes, and end up with a superb, roadworthy multi-purpose vehicle.', image_url: "http://books.google.com/books/content?id=3R2AV8hOTLUC&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE731nQ7eo1fQjeKKTN3SxyctIuFsW7xpwVzmwdj4TpWDjb0s-C4r5DqFESDkQ3Ul3o4qAglF5DyemZZTpoiORdahshHibC76pPA4MVTrqUCyUDJMyt0hVZpJ3e0msnfgUYP0ITIS&source=gbs_api", year: "2006"}]);
+
+comments = [
+  "I liked this book. It was interesting.",
+  "I hated this book. It was awful.",
+  "I have no feelings one way or another",
+  "Meh",
+  "First!!11",
+  "Hi mom!"
+]
+Book.all.each do |book|
+  5.times do
+    Comment.create(user_id: rand(1...20), book_id: book.id, body: comments[rand(0..5)])
+  end
+end

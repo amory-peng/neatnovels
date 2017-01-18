@@ -4,9 +4,6 @@
 .comment-container {
   display: flex;
   flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  margin-left: 80px;
 }
 
 .comment-form {
@@ -17,18 +14,39 @@
 }
 
 .comment-form textarea {
+  box-sizing: border-box;
   width: 350px;
-  height: 150px;
+  height: 100px;
   resize: none;
+  outline: none;
 }
 
-.comment-form .button {
+.comment-form textarea:focus {
+  border: 1px solid $red;
+}
+
+
+
+.comment-form .button,
+.comment-form .grey-button {
   margin-top: 15px;
   width: 100px;
 }
 .comment-list > li {
+  display: flex;
   padding: 10px;
   margin-left: 30px;
-  max-width: 400px;
+  max-width: 500px;
   word-wrap: break-word;
+}
+
+.comment-list > li > .user-profile {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 100px;
+  margin-right: 10px;
 }

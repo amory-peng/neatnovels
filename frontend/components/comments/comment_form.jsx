@@ -19,8 +19,10 @@ class CommentForm extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    const newComment = merge({}, this.state);
-    this.setState({body: ""}, () => this.props.createComment(newComment));
+    if (this.state.body.length > 0) {
+      const newComment = merge({}, this.state);
+      this.setState({body: ""}, () => this.props.createComment(newComment));
+    }
   }
 
   render() {
@@ -30,12 +32,16 @@ class CommentForm extends React.Component{
         <li key={idx}>{error}</li>
       ));
     }
+    let buttonClass = "grey-button";
+    if (this.state.body.length > 0) {
+      buttonClass = "button";
+    }
     return(
       <div>
         <h2>Leave a comment!</h2>
         <form onSubmit={this.handleSubmit} className="comment-form">
           <textarea onChange={this.handleChange} value={this.state.body}></textarea>
-          <input type="submit" className="button" value="Add Comment"></input>
+          <input type="submit" className={ buttonClass } value="Add Comment"></input>
         </form>
         <ul className="comment-errors-container">{errorText}</ul>
       </div>

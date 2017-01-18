@@ -8,7 +8,7 @@ class SearchIndex extends React.Component {
     super(props);
     this.state = { loading: true };
     this.handleClick = this.handleClick.bind(this);
-    this.searchBooks = this.props.searchBooks;
+    this.searchBooks = debounce(this.props.searchBooks, 500);
   }
 
   componentWillMount() {

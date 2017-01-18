@@ -61,14 +61,14 @@ class BookDetail extends React.Component {
               { addBookForm }
               <Link to="/books" className="button">Back to Index</Link>
             </div>
+            <div className="comment-container">
+              { commentForm }
+              <CommentsIndex bookId={this.props.bookId} />
+            </div>
 
           </div>
         </div>
 
-        <div className="comment-container">
-          { commentForm }
-          <CommentsIndex bookId={this.props.bookId} />
-        </div>
       </div>
       ;
     }
