@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router';
+import { Link } from 'react-router';
 import Header from './greeting/header';
 import Footer from './greeting/footer';
 

@@ -54,7 +54,7 @@ class BookDetail extends React.Component {
               { addBookForm }
               <Link to="/books" className="button">Back to Index</Link>
             </div>
-            
+
             <div className="book-desc-summary">
               <h2 className="padding-bottom-5">Summary</h2>
               <p>
@@ -62,6 +62,7 @@ class BookDetail extends React.Component {
               </p>
             </div>
             <div className="comment-container">
+              <h2>Comments</h2>
               { commentForm }
               <CommentsIndex bookId={this.props.bookId} />
             </div>

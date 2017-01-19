@@ -32,7 +32,7 @@ const Root = ({ store }) => (
         <Route path="signup" component={ SessionForm } onEnter={_redirectIfLoggedIn}/>
         <Route path="books" component={ BooksIndex } />
         <Route path="books/search/*" component= { SearchIndex } />
-          <Route path="books/:bookId" component={ BookDetail } />
+        <Route path="books/:bookId" component={ BookDetail } />
         <Route path="bookshelves" component= { BookshelfIndex } onEnter={_ensureLoggedIn}>
           <Route path=":bookshelfId" component={ BookshelfDetail } onEnter={_ensureLoggedIn} />
         </Route>

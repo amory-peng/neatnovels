@@ -4,7 +4,7 @@ import merge from 'lodash/merge';
 class CommentForm extends React.Component{
   constructor(props) {
     super(props);
-    this.state = { body: ""};
+    this.state = { body: "" };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -38,7 +38,6 @@ class CommentForm extends React.Component{
     }
     return(
       <div>
-        <h2>Leave a comment!</h2>
         <form onSubmit={this.handleSubmit} className="comment-form">
           <textarea onChange={this.handleChange} value={this.state.body}></textarea>
           <input type="submit" className={ buttonClass } value="Add Comment"></input>

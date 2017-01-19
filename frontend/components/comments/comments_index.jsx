@@ -19,10 +19,16 @@ class CommentsIndex extends React.Component{
           <span>{comment.username[0]}</span>
         </div>
 
-        <div>
-          {comment.username} on {comment.created_at.slice(0,10)} says:
-          <br />
-          {comment.body}
+        <div className="comment">
+          <div className="comment-author">
+            {comment.username} says:
+          </div>
+          <div className="comment-body">
+            {comment.body}
+          </div>
+          <div className="comment-date">
+            on {comment.created_at.slice(0,10)}
+          </div>
         </div>
       </li>
     ));
