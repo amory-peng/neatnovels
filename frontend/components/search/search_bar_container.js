@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
 import { requestBooks } from '../../actions/book_actions';
 import { searchBooks,
-         clearQueriedBooks,
-         receiveQuery } from '../../actions/search_actions';
+         clearQueriedBooks } from '../../actions/search_actions';
 import SearchBar from './search_bar';
 
 const mapStateToProps = ({ search }, ownProps) => {
@@ -17,8 +16,7 @@ const mapStateToProps = ({ search }, ownProps) => {
 const mapDispatchToProps = () => dispatch => ({
   searchBooks: (query) => dispatch(searchBooks(query)),
   requestBooks: () => dispatch(requestBooks(0)),
-  clearQueriedBooks: () => dispatch(clearQueriedBooks()),
-  receiveQuery: (query) => dispatch(receiveQuery(query))
+  clearQueriedBooks: () => dispatch(clearQueriedBooks())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);

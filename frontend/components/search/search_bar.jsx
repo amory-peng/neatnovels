@@ -12,7 +12,6 @@ class SearchBar extends React.Component {
 
   handleChange(e) {
     const query = e.target.value;
-    this.props.receiveQuery(query);
     this.setState({ query },
       () => this.sendRequest(query)
     );
@@ -25,12 +24,9 @@ class SearchBar extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const query = this.state.query;
-    this.props.receiveQuery(query);
     if (query.length > 0) {
       this.setState({ query: "" }, () => {
         hashHistory.push(`/books/search/${query}`);
-        this.props.clearQueriedBooks();
-        this.props.searchBooks(query);
       });
     }
   }

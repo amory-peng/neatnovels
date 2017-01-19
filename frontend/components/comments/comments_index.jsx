@@ -4,7 +4,6 @@ import CommentForm from './comment_form_container';
 class CommentsIndex extends React.Component{
   constructor(props) {
     super(props);
-    this.randomColor = this.randomColor.bind(this);
   }
 
   componentWillMount() {
@@ -12,14 +11,11 @@ class CommentsIndex extends React.Component{
     this.props.requestComments();
   }
 
-  randomColor() {
-    const colors = ['bg-blue', 'bg-green', 'bg-red'];
-    return colors[Math.floor(Math.random() * colors.length)];
-  }
+
   render() {
     const commentList = this.props.comments.map((comment, idx) => (
       <li key={idx}>
-        <div className={`user-profile ${this.randomColor()}`}>
+        <div className={`user-profile bg-red`}>
           <span>{comment.username[0]}</span>
         </div>
 

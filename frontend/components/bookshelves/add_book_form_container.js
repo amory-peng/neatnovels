@@ -4,9 +4,10 @@ import { requestBookshelves,
          addBookToShelf,
          removeBookFromShelf } from '../../actions/bookshelf_actions';
 
-const mapStateToProps = ({ bookshelves }, ownProps) => ({
+const mapStateToProps = ({ bookshelves, session }, ownProps) => ({
   bookshelves: bookshelves.bookshelves,
-  bookId: ownProps.bookId
+  bookId: ownProps.bookId,
+  currentUser: session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

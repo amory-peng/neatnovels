@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { clearQueriedBooks, receiveQuery, searchBooks } from '../../actions/search_actions';
+import { clearQueriedBooks, searchBooks } from '../../actions/search_actions';
 
 import SearchIndex from './search_index';
 
@@ -12,7 +12,6 @@ const mapStateToProps = ({ search }, ownProps) => {
 const mapDispatchToProps = dispatch => ({
   clearQueriedBooks: () => dispatch(clearQueriedBooks()),
   searchBooks: (query) => dispatch(searchBooks(query)),
-  receiveQuery: query => dispatch(receiveQuery(query))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchIndex);

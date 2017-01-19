@@ -8,11 +8,12 @@ class Api::UsersController < ApplicationController
     end
     if @user.save
       login(@user)
-      Bookshelf.create(user_id: @user.id, name: "read", protect: true)
+      Bookshelf.create(user_id: @user.id, name: "Read", protect: true)
       cr_shelf =
-        Bookshelf.create(user_id: @user.id, name: "currently reading", protect: true)
-      Bookshelf.create(user_id: @user.id, name: "to read", protect: true)
+        Bookshelf.create(user_id: @user.id, name: "Currently Reading", protect: true)
+      Bookshelf.create(user_id: @user.id, name: "To Read", protect: true)
 
+      #demo seeding
       if user_params[:demo]
         demoshelves = ["Horror", "Comedy"]
         demoshelves.each do |demo_name|

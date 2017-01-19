@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
+import EasyTransition from 'react-easy-transition';
 
 const BooksIndexItem = ({ book }) => {
   let img = <img src='../../assets/book-placeholder.png'/>;

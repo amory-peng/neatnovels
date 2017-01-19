@@ -6,23 +6,32 @@ import debounce from 'lodash/debounce';
 class SearchIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { loading: true };
+    this.state = { query: "" };
+    this.loading = true;
     this.handleClick = this.handleClick.bind(this);
     this.searchBooks = debounce(this.props.searchBooks, 500);
   }
 
   componentWillMount() {
-    this.props.clearQueriedBooks();
     const query = this.props.location.pathname.slice(14);
-    this.searchBooks(query);
-    this.props.receiveQuery(query);
+    this.setState({ query }, () => {
+      this.props.clearQueriedBooks();
+      this.searchBooks(query);
+    });
   }
 
   componentWillReceiveProps(newProps) {
-    const query = newProps.location.pathname.slice(14);
-    if (query !== this.props.query) {
-      this.searchBooks(query);
-      this.props.receiveQuery(query);
+    const newQuery = newProps.location.pathname.slice(14);
+    // console.log(this.state, newQuery);
+    // //new query comes in, search sent by search bar
+    console.log(newProps, this.loading);
+    if (newQuery !== this.state.query) {
+      this.loading = true;
+    } else   // } else if (this.state.loading && this.state.query === newQuery) {
+    //   this.setState({loading: false});
+    // }
+    if (this.state.query === newQuery) {
+      this.loading = false;
     }
   }
 
@@ -34,12 +43,17 @@ class SearchIndex extends React.Component {
 
   render() {
     let bookList;
+
     if (this.props.books.length > 0) {
       bookList = this.props.books.map( (book,idx) => (
         <li key={idx} onClick={this.handleClick(book.id)}>
           <BooksIndexItem book={book} />
         </li>
       ));
+    } else if (this.loading) {
+      bookList = <h1>Searching...</h1>;
+    } else {
+      bookList = <h1>Nothing found!</h1>;
     }
 
     return (
