@@ -6,6 +6,7 @@ import debounce from 'lodash/debounce';
 class SearchIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { query: "" };
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -13,6 +14,16 @@ class SearchIndex extends React.Component {
     const query = this.props.location.pathname.slice(14);
     this.props.clearQueriedBooks();
     this.props.searchBooks(query);
+  }
+
+  componentWillReceiveProps(newProps) {
+    const newQuery = newProps.location.pathname.slice(14);
+    if (this.state.query !== newQuery) {
+      this.setState({ query: newQuery }, () => {
+        this.props.clearQueriedBooks();
+        this.props.searchBooks(newQuery);
+      });
+    }
   }
 
   handleClick(id) {

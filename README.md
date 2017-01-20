@@ -30,6 +30,6 @@ While the current features are complete, there are still many more possible addi
 Add additional search refinement (currently only though title and author).
 
 ### User Profiles
-Allow users to upload photos and share bookshelves with other users.
+Allow users to upload a profile picture and share bookshelves with other users.
 
 [heroku-link]: http//neatnovels.herokuapp.com
