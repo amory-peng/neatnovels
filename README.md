@@ -10,6 +10,7 @@ Users can search through books and add to custom bookshelves. A `shelvings` tabl
 ![Guest Sign In](./docs/images/guest-signed-in.png)
 
 Protected bookshelves "Read", "Currently reading", and "To read" are mutually exclusive and cannot be deleted. A book added to one of these protected shelves will destroy the shelvings connecting the book to the other two protected shelves.
+![Add to Special Shelf](./docs/images/bookshelves.gif)
 
 ### Infinite Scroll
 Initial rendering of the books index page sends a request for 12 books, ordered by title. Once the user scrolls near the bottom of the page, an event listener fires and sends a request for more books, passing the last book id received as the starting index for the backend query. updating the store once the response is received:
