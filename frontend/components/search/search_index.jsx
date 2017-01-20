@@ -7,13 +7,12 @@ class SearchIndex extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    this.searchBooks = debounce(this.props.searchBooks, 500);
   }
 
   componentWillMount() {
     const query = this.props.location.pathname.slice(14);
     this.props.clearQueriedBooks();
-    this.searchBooks(query);
+    this.props.searchBooks(query);
   }
 
   handleClick(id) {

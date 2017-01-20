@@ -1,24 +1,35 @@
-# README
+# NeatNovels
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Neatnovels][heroku-link] is a single page application that allows users to search for books and
+add to bookshelves. Inspired by goodreads, it is a full stack web app that uses Ruby
+on Rails on the backend, a PostgreSQL database, and React/Redux on the frontend.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+### Guest Sign In
+Guest users are dynamically generated accounts with preseeded books and shelves.
 
-* System dependencies
+### Books and Bookshelves
+Users can search through books and add to custom bookshelves.
 
-* Configuration
+Protected bookshelves "Read", "Currently reading", and "To read" are mutually exclusive.
 
-* Database creation
+### Infinite Scroll
+Initial rendering of the books index page sends a request for 12 books, ordered by title. Once the
+user scrolls near the bottom of the page, an event listener fires and sends a request for more books,
+updating the store once the response is received:
 
-* Database initialization
+Once the response contains less than 12 books, the event listener is turned off and further requests are
+prevented:
 
-* How to run the test suite
+### Dynamic Search
 
-* Services (job queues, cache servers, search engines, etc.)
+## Features Implementation
+While the current features are complete, there are still many more possible additions:
+### Advanced Search
+Add additional search refinement (currently only though title and author).
 
-* Deployment instructions
+### User Profiles
+Allow users to upload photos and share bookshelves with other users.
 
-* ...
+[heroku-link]: http//neatnovels.herokuapp.com
