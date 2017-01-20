@@ -1,6 +1,6 @@
 # Neatnovels
 
-[Neatnovels][site-link] is a single page application that allows users to search for books and add to bookshelves. Inspired by goodreads, it is a full stack web app that uses Ruby on Rails on the backend, a PostgreSQL database, and React/Redux on the frontend.
+[Neatnovels](site-link) is a single page application that allows users to search for books and add to bookshelves. Inspired by goodreads, it is a full stack web app that uses Ruby on Rails on the backend, a PostgreSQL database, and React/Redux on the frontend.
 
 ![Neatnovels home page](./docs/images/neatnovels-home-page.png)
 ## Features
