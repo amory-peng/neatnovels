@@ -66,4 +66,4 @@ Add additional search refinement (currently only though title and author).
 ### User Profiles
 Allow users to upload a profile picture and share bookshelves with other users.
 
-[site-link]: http//neatnovels.club
+[site-link]: http//www.neatnovels.club
