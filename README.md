@@ -20,8 +20,41 @@ Initial rendering of the books index page sends a request for 12 books, ordered 
 user scrolls near the bottom of the page, an event listener fires and sends a request for more books,
 updating the store once the response is received:
 
+```javascript
+//in constructor
+this.state = { lastBookId: 0, hasMore: true };
+...
+
+componentWillMount() {
+  if (this.props.books.length === 0) {
+    this.props.requestBooks(0);
+  }
+  document.addEventListener('scroll', this.handleScroll);
+}
+
+handleScroll() {
+  if (document.body.scrollHeight - 200 <
+      document.body.scrollTop + window.innerHeight &&
+      this.state.hasMore === true ) {
+      this.props.requestBooks(this.state.lastBookId);
+  }
+}
+```
+
+
 Once the response contains less than 12 books, the event listener is turned off and further requests are
 prevented:
+
+```javascript
+componentWillReceiveProps(newProps) {
+  const newLastBookId = newProps.books.length;
+  let newHasMore = true;
+  if (newLastBookId % 12 !== 0) {
+    newHasMore = false;
+  }
+  this.setState( {lastBookId: newLastBookId, hasMore: newHasMore });
+}
+```
 
 ### Dynamic Search
 
