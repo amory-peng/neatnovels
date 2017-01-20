@@ -7,13 +7,21 @@
 [site-link]: http://www.neatnovels.club
 ## Features
 
+### User Creation and Authentication
+Users can easily sign up and be assured their password is securely stored (hashed via BCrypt). Prospective users can demo the site using the dynamic guest user generation with pre-seeded bookshelves.
+
+![Login](./docs/images/login.png)
+
 ### Books and Bookshelves
 Users can search through books and add to custom bookshelves. A `shelvings` table joins bookshelves and books.
+
 ![Guest Sign In](./docs/images/guest-signed-in.png)
 
-Protected bookshelves "Read", "Currently reading", and "To read" are mutually exclusive and cannot be deleted. A book added to one of these protected shelves will destroy the shelvings connecting the book to the other two protected shelves.
+Protected bookshelves "Read", "Currently reading", and "To read" are mutually exclusive and cannot be deleted. A book added to one of these protected shelves will destroy any previous `shelving` joining the book to one of the other two protected shelves.
 
 ![Add to Special Shelf](./docs/images/bookshelves.gif)
+
+Users can also view and add `comment`s to books that are displayed on the book's show page. Non-users can only view.
 
 ### Infinite Scroll
 Initial rendering of the books index page sends a request for 12 books, ordered by title. Once the user scrolls near the bottom of the page, an event listener fires and sends a request for more books, passing the current number of books in the store as the offset for the backend query. The store is updated once the response is received:
@@ -40,7 +48,7 @@ handleScroll() {
 ```
 
 
-Once the response contains less than 12 books (the normal number of books in the response), local state is updated and further requests are prevented:
+Once the response contains less than 12 books, local state is updated and further requests are prevented:
 
 ```javascript
 componentWillReceiveProps(newProps) {
@@ -54,10 +62,11 @@ componentWillReceiveProps(newProps) {
 ```
 
 ### Dynamic Search
-Users in `/search` or `/books` can enter queries into the search bar and books matching the string will render.
+Users in `/search` or `/books` can enter queries into the search bar and books with titles or authors matching the string will render.
+
 ![Search](./docs/images/search.gif)
 
-In other pages, submitting the query renders the search index component.
+In other pages, submitting the query renders the `searchIndex` component.
 
 ## Features Implementation
 While the current features are complete, there are still many more possible additions:
