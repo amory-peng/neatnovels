@@ -7,7 +7,7 @@
 
 ### Books and Bookshelves
 Users can search through books and add to custom bookshelves. A `shelvings` table joins bookshelves and books.
-![Guest Sign In](./docs/images/guest-sign-in.png)
+![Guest Sign In](./docs/images/guest-signed-in.png)
 
 Protected bookshelves "Read", "Currently reading", and "To read" are mutually exclusive and cannot be deleted. A book added to one of these protected shelves will destroy the shelvings connecting the book to the other two protected shelves.
 
@@ -36,8 +36,7 @@ handleScroll() {
 ```
 
 
-Once the response contains less than 12 books, the event listener is turned off and further requests are
-prevented:
+Once the response contains less than 12 books, local state is updated and further requests are prevented:
 
 ```javascript
 componentWillReceiveProps(newProps) {
@@ -51,9 +50,10 @@ componentWillReceiveProps(newProps) {
 ```
 
 ### Dynamic Search
-Users in `/search` can enter queries into the search bar and books matching the string will pop up:
+Users in `/search` or `/books` can enter queries into the search bar and books matching the string will render.
+![Search](./docs/images/search.gif)
 
-In other pages, submitting the query into the search bar renders the search component:
+In other pages, submitting the query renders the search index component.
 
 ## Features Implementation
 While the current features are complete, there are still many more possible additions:
