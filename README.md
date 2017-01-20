@@ -72,7 +72,7 @@ In other pages, submitting the query renders the `searchIndex` component.
 While the current features are complete, there are still many more possible additions:
 
 ### Advanced Search
-Add additional search refinement (currently only though title and author).
+Add additional search refinement (currently only through title and author).
 
 ### User Profiles
 Allow users to upload a profile picture and share bookshelves with other users.
