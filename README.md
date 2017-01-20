@@ -4,6 +4,7 @@
 add to bookshelves. Inspired by goodreads, it is a full stack web app that uses Ruby
 on Rails on the backend, a PostgreSQL database, and React/Redux on the frontend.
 
+[Neatnovels home page](./docs/image/neatnovels-home-page.png)
 ## Features
 
 ### Guest Sign In
