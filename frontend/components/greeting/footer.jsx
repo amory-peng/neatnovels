@@ -24,7 +24,7 @@ class Footer extends React.Component{
         <a href="https://github.com/amory-peng/neatnovels">
           <img id="github" src="../../assets/github-mark.png"></img>
         </a>
-        <a href="https://www.linkedin.com/in/amory-peng-6b2a8862?trk=nav_responsive_tab_profile">
+        <a href="https://www.linkedin.com/in/amory-peng">
           <img id="linked-in" src={imgUrl}></img>
         </a>
       </div>
