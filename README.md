@@ -13,7 +13,7 @@ Users can easily sign up and be assured their password is securely stored (hashe
 ![Login](./docs/images/login.png)
 
 ### Books and Bookshelves
-Users can search through books and add to custom bookshelves. A `shelvings` table joins bookshelves and books.
+Users can search through books and add to custom bookshelves. A `shelvings` table joins bookshelves and books, and indexed on `bookshelf_id` and `book_id` to ensure fast lookup times.
 
 ![Guest Sign In](./docs/images/guest-signed-in.png)
 

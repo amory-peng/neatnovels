@@ -25,7 +25,7 @@ class AddBookForm extends React.Component {
         if (currentShelf.books) {
           Object.keys(currentShelf.books).forEach( bookId => {
             if (this.props.bookId === bookId) {
-              sym = "❤️";
+              sym = "➕";
               handleClick = this.props.removeBookFromShelf;
             }
           });
